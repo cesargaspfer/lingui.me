@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Author Comment Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Comment</th>
+      <th>Post</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @author_comment_posts.each do |author_comment_post| %>
+      <tr>
+        <td><%= author_comment_post.user %></td>
+        <td><%= author_comment_post.comment %></td>
+        <td><%= author_comment_post.post %></td>
+        <td><%= link_to 'Show', author_comment_post %></td>
+        <td><%= link_to 'Edit', edit_author_comment_post_path(author_comment_post) %></td>
+        <td><%= link_to 'Destroy', author_comment_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Author Comment Post', new_author_comment_post_path %>

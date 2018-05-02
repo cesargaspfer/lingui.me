@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @learning_language.user %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @learning_language.language %>
+</p>
+
+<%= link_to 'Edit', edit_learning_language_path(@learning_language) %> |
+<%= link_to 'Back', learning_languages_path %>

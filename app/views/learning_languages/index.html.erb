@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Learning Languages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Language</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @learning_languages.each do |learning_language| %>
+      <tr>
+        <td><%= learning_language.user %></td>
+        <td><%= learning_language.language %></td>
+        <td><%= link_to 'Show', learning_language %></td>
+        <td><%= link_to 'Edit', edit_learning_language_path(learning_language) %></td>
+        <td><%= link_to 'Destroy', learning_language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Learning Language', new_learning_language_path %>

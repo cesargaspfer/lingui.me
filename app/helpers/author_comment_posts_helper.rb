@@ -1,0 +1,2 @@
+module AuthorCommentPostsHelper
+end

@@ -1,0 +1,27 @@
+<%= form_with(model: mother_language, local: true) do |form| %>
+  <% if mother_language.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mother_language.errors.count, "error") %> prohibited this mother_language from being saved:</h2>
+
+      <ul>
+      <% mother_language.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :languages %>
+    <%= form.text_field :languages %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
