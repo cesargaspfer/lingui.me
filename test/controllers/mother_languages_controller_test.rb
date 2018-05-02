@@ -17,7 +17,7 @@ class MotherLanguagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create mother_language" do
     assert_difference('MotherLanguage.count') do
-      post mother_languages_url, params: { mother_language: { languages: @mother_language.languages, user_id: @mother_language.user_id } }
+      post mother_languages_url, params: { mother_language: { language: @mother_language.language, user_id: @mother_language.user_id } }
     end
 
     assert_redirected_to mother_language_url(MotherLanguage.last)
@@ -34,7 +34,7 @@ class MotherLanguagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update mother_language" do
-    patch mother_language_url(@mother_language), params: { mother_language: { languages: @mother_language.languages, user_id: @mother_language.user_id } }
+    patch mother_language_url(@mother_language), params: { mother_language: { language: @mother_language.language, user_id: @mother_language.user_id } }
     assert_redirected_to mother_language_url(@mother_language)
   end
 

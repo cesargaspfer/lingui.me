@@ -14,7 +14,7 @@ class MotherLanguagesTest < ApplicationSystemTestCase
     visit mother_languages_url
     click_on "New Mother Language"
 
-    fill_in "Languages", with: @mother_language.languages
+    fill_in "Language", with: @mother_language.language
     fill_in "User", with: @mother_language.user_id
     click_on "Create Mother language"
 
@@ -26,7 +26,7 @@ class MotherLanguagesTest < ApplicationSystemTestCase
     visit mother_languages_url
     click_on "Edit", match: :first
 
-    fill_in "Languages", with: @mother_language.languages
+    fill_in "Language", with: @mother_language.language
     fill_in "User", with: @mother_language.user_id
     click_on "Update Mother language"
 

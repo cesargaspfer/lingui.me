@@ -2,8 +2,8 @@
 
 one:
   user: one
-  languages: MyString
+  language: MyString
 
 two:
   user: two
-  languages: MyString
+  language: MyString

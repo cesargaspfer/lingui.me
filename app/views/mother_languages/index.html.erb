@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>User</th>
-      <th>Languages</th>
+      <th>Language</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @mother_languages.each do |mother_language| %>
       <tr>
         <td><%= mother_language.user %></td>
-        <td><%= mother_language.languages %></td>
+        <td><%= mother_language.language %></td>
         <td><%= link_to 'Show', mother_language %></td>
         <td><%= link_to 'Edit', edit_mother_language_path(mother_language) %></td>
         <td><%= link_to 'Destroy', mother_language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
