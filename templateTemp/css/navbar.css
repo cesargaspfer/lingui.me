@@ -1,0 +1,53 @@
+.navbar {
+	position: sticky;
+    display: flex;
+    background-color: #43A849;
+	text-align: center;
+	-webkit-flex: 1; /* Safari 6.1+ */
+	flex: 1;
+    text-align: center;
+	display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    align-items: center;
+}
+.btn-navbar {
+	font-family: ArialRoundedMTBold;
+    background-color: #43A849; /* Green */
+    border: none;
+    color: white;
+    padding: 1% 0px;
+    -webkit-flex: 1; /* Safari 6.1+ */
+	flex: 1;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    font-size: 200%;
+
+    cursor: pointer;
+    font-weight: bold;
+    float: left;
+      position: relative;
+}
+
+.btn-navbar:hover {
+    background-color: #26902D;
+}
+
+.btn-navbarClicked {
+	font-family: ArialRoundedMTBold;
+    background-color: white; /* Green */
+    border: none;
+    color: #43A849;
+    padding: 1% 0px;
+    -webkit-flex: 1; /* Safari 6.1+ */
+	flex: 1;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    font-size: 200%;
+
+    cursor: pointer;
+    font-weight: bold;
+    float: left;
+      position: relative;
+}
