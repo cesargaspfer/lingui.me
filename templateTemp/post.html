@@ -29,11 +29,6 @@
   <a href="default.asp" class="btn-navbar">Me</a>
   <a href="default.asp" class="btn-navbar">Options</a>
 </div>
-<div class="navbar">
-  <a href="default.asp" class="btn-navbar">Basic</a>
-  <div class="btn-navbarClicked">Intermediate</div>
-  <a href="default.asp" class="btn-navbar">Advanced</a>
-</div>
 
 <!-- The flexible grid (content) -->
 <div class="row">
@@ -47,7 +42,13 @@
     <div class='forms'>
       <form action="####">
         <label for="title" class="forms-text">Title</label>
-        <input type="text" id="title" name="title" placeholder="Your question..">
+				<input type="text" id="title" name="title" placeholder="Your question..">
+				<label for="difficulty" class="forms-text">Difficulty</label>
+				<select>
+					<option value="basic">Basic</option>
+					<option value="intermediate">Intermediate</option>
+					<option value="advanced">Advanced</option>
+				</select>
         <label for="question" class="forms-text">Your question</label><br>
         <textarea id="question" class="forms-text" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
         <!-- <input type="text" id="lname" name="lastname" placeholder="Your last name.."> -->
