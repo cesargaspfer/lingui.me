@@ -6,15 +6,21 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    color: #313131;
+    font-size: 120%;
 }
-input[type=textarea] {
-    width: 90%;
+#question {
+    width: 100%;
+    height: auto;
     padding: 1% 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    resize: vertical;
+    color: #313131;
+    font-size: 120%;
 }
 
 input[type=submit] {
