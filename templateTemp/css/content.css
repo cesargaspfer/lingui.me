@@ -1,0 +1,39 @@
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.notif {
+    flex: 13%;
+    background-color: #f1f1f1;
+    padding: 1%;
+}
+.ads {
+    flex: 6%;
+    background-color: #f1f1f1;
+    padding: 1%;
+}
+/* Main column */
+.main {
+    flex: 62%;
+    background-color: white;
+    padding: 20px;
+}
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+.CreatePostLink {
+  color: #26902D;
+  text-decoration: none;
+  font-size: 170%;
+  text-align: center;
+}
+.CreatePostLink:hover {
+  color: #19611e;
+}

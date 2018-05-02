@@ -1,0 +1,56 @@
+.PostBoxLink {
+  padding: 2%;
+	-webkit-transition-duration: 0.3s; /* Safari */
+  background-color: #f1f1f1;
+}
+.PostBoxLink:hover {
+	background-color: #e6e6e6;
+}
+.PostBarLink {
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+.PostLink {
+  color: #26902D;
+  text-decoration: none;
+  font-size: 120%;
+}
+.PostLink:hover {
+  color: #19611e;
+}
+
+.PostDescription {
+  color: #313131;
+  text-decoration: none;
+  font-size: 100%;
+  margin-bottom: 1%;
+}
+
+.PostDescriptionLink {
+  text-decoration: none;
+  color: #26902D;
+}
+.PostDescriptionLink:hover {
+  color: #19611e;
+}
+.PostLanguage {
+  color: #656565;
+  text-decoration: none;
+  font-size: 80%;
+  margin-bottom: 1%;
+}
+.PostDetails{
+  color: #656565;
+  text-decoration: none;
+  font-size: 80%;
+  margin-bottom: 1%;
+}
+.Navigate {
+  color: #26902D;
+  text-decoration: none;
+  font-size: 110%;
+  margin: 3%;
+}
+.Navigate:hover {
+  color: #19611e;
+}
