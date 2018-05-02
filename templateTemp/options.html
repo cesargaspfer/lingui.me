@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/navbar.css">
 <link rel="stylesheet" type="text/css" href="css/content.css">
-<link rel="stylesheet" type="text/css" href="css/posts.css">
+<link rel="stylesheet" type="text/css" href="css/forms.css">
 <link rel="stylesheet" type="text/css" href="css/notifications.css">
 
 <link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -24,15 +24,10 @@
 
 <!-- Navigation Bar -->
 <div class="navbar">
-  <div class="btn-navbarClicked">Learn</div>
+  <a href="learn.html" class="btn-navbar">Learn</a>
   <a href="teach.html" class="btn-navbar">Teach</a>
   <a href="user.html" class="btn-navbar">Me</a>
-  <a href="options.html" class="btn-navbar">Options</a>
-</div>
-<div class="navbar">
-  <a href="#" class="btn-navbar">Basic</a>
-  <div class="btn-navbarClicked">Intermediate</div>
-  <a href="#" class="btn-navbar">Advanced</a>
+  <div class="btn-navbarClicked">Options</div>
 </div>
 
 <!-- The flexible grid (content) -->
@@ -44,42 +39,56 @@
 		<h4>Look this ads!</h4>
 	</div>
 	<div class="main">
-    <div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink">
-
-    <div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink"><div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink"><div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink"><div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink">
-    <div  align='center'>
-      <a class="Navigate" href="/createpost">< Newest questions</a>
-      <a class="Navigate" href="/createpost">Previous questions ></a>
+    <div class='forms'>
+      <form action="####">
+        <label for="title" class="forms-text">Learning languages<br></label>
+        <br>
+        <label class="container-check-box">English
+          <input type="checkbox" value="english">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container-check-box">Portuguese
+          <input type="checkbox" value="portuguese">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container-check-box">French
+          <input type="checkbox" value="french">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container-check-box">German
+          <input type="checkbox" value="german">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container-check-box">Spanish
+          <input type="checkbox" value="spanish">
+          <span class="checkmark"></span>
+        </label>
+        <hr class="notificationshr1">
+        <label for="title" class="forms-text">Teaching languages<br></label>
+        <br>
+        <label class="container-check-box">English
+          <!-- <input type="checkbox" checked="checked" value="english"> -->
+          <input type="checkbox" value="english">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container-check-box">Portuguese
+          <input type="checkbox" value="portuguese">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container-check-box">French
+          <input type="checkbox" value="french">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container-check-box">German
+          <input type="checkbox" value="german">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container-check-box">Spanish
+          <input type="checkbox" value="spanish">
+          <span class="checkmark"></span>
+        </label>
+        <input type="submit" value="Submit">
+      </form>
     </div>
 	</div>
 

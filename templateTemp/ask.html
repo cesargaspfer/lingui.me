@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/navbar.css">
 <link rel="stylesheet" type="text/css" href="css/content.css">
-<link rel="stylesheet" type="text/css" href="css/posts.css">
+<link rel="stylesheet" type="text/css" href="css/forms.css">
 <link rel="stylesheet" type="text/css" href="css/notifications.css">
 
 <link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -24,15 +24,10 @@
 
 <!-- Navigation Bar -->
 <div class="navbar">
-  <div class="btn-navbarClicked">Learn</div>
+  <a href="learn.html" class="btn-navbar">Learn</a>
   <a href="teach.html" class="btn-navbar">Teach</a>
   <a href="user.html" class="btn-navbar">Me</a>
   <a href="options.html" class="btn-navbar">Options</a>
-</div>
-<div class="navbar">
-  <a href="#" class="btn-navbar">Basic</a>
-  <div class="btn-navbarClicked">Intermediate</div>
-  <a href="#" class="btn-navbar">Advanced</a>
 </div>
 
 <!-- The flexible grid (content) -->
@@ -44,42 +39,21 @@
 		<h4>Look this ads!</h4>
 	</div>
 	<div class="main">
-    <div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink">
-
-    <div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink"><div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink"><div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink"><div class="PostBoxLink">
-      <div class="PostLanguage">English</div>
-      <a href="/postid" class="PostLink">"How do you write "good morning" in portuguese?"</a><br>
-      <div class="PostDescription">Posted by <a href="/userid" class="PostDescriptionLink">UserName</a> in 02/05/18</div>
-      <div class="PostDetails">3 Comments&nbsp;&nbsp;&nbsp;1 Upvote</div>
-    </div>
-    <hr class="PostBarLink">
-    <div  align='center'>
-      <a class="Navigate" href="/createpost">< Newest questions</a>
-      <a class="Navigate" href="/createpost">Previous questions ></a>
+    <div class='forms'>
+      <form action="####">
+        <label for="title" class="forms-text">Title</label>
+				<input type="text" id="title" name="title" placeholder="Your question..">
+				<label for="difficulty" class="forms-text">Difficulty</label>
+				<select>
+					<option value="basic">Basic</option>
+					<option value="intermediate">Intermediate</option>
+					<option value="advanced">Advanced</option>
+				</select>
+        <label for="question" class="forms-text">Your question</label><br>
+        <textarea id="question" class="forms-text" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        <!-- <input type="text" id="lname" name="lastname" placeholder="Your last name.."> -->
+        <input type="submit" value="Submit">
+      </form>
     </div>
 	</div>
 
