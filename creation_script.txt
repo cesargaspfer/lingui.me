@@ -1,0 +1,51 @@
+rails new linguime -d postgresql
+
+Criar usuário linguime com senha linguime no postgres
+Entrar no arquivo pg_hba.conf e adicionar a seguinte linha:
+
+local   all             linguime                                md5
+
+Reiniciar o postgres (systemctl postgresql.service, no Arch)
+export DATABASE_USERNAME=linguime
+export DATABASE_PASSWORD=linguime
+
+MACETE no database.yml:   username: <%= ENV['DATABASE_USERNAME'] %>
+                          password: <%= ENV['DATABASE_PASSWORD'] %>
+
+Gemfile: gem 'devise'
+         gem 'hirb'
+
+
+rails g devise:install
+Seguir as instruções do devise
+
+rails g devise user
+rails generate migration add_username_to_users username:string:uniq
+
+rails generate scaffold LearningLanguage user:references language:string
+adicionar no model: validates :user, uniqueness: { scope: :language }
+
+rails generate scaffold MotherLanguage user:references language:string
+adicionar no model: validates :user, uniqueness: { scope: :language }
+
+rails generate scaffold Post upvotes:integer user:references difficulty:integer learning_language:string mother_language:string title:string text:string
+
+rails generate scaffold Comment upvotes:integer text:string
+
+rails generate scaffold Bookmark user:references post:references
+adicionar no model: validates :user, uniqueness: { scope: :post }
+
+rails generate scaffold AuthorCommentPost user:references comment:references post:references
+
+rails generate controller Welcome index
+
+routes.rb: root 'welcome#index'
+
+rails db:create
+rails db:migrate
+
+devise.rb: config.scoped_views = true
+
+https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
+
+copiar application_controller.rb e welcome_controller.rb
