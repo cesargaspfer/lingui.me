@@ -1,0 +1,33 @@
+.notifications {
+	color: #313131;
+	padding: 2%;
+	-webkit-transition-duration: 0.3s; /* Safari */
+}
+
+.notifications:hover {
+	background-color: #e8e8e8;
+}
+
+.notificationsLink {
+	text-decoration: none;
+	color: #43A849;
+}
+.notificationsLink:hover {
+	text-decoration: none;
+	color: #26902D;
+}
+.notificationsDate {
+	font-size: 80%;
+	color: #7b7b7b;
+}
+.notificationshr1{
+	margin-bottom: 3%;
+    margin-top: 3%;
+}
+.notificationsBox{
+	margin: 3%;
+    background-color: #fffdfd;
+    padding: 2%;
+    border: 1px solid #353535;
+    color: #2b2b2b;
+}
