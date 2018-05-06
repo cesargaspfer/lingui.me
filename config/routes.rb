@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :teach
+  resources :learn
   resources :mother_languages
   root 'welcome#index'
   resources :author_comment_posts

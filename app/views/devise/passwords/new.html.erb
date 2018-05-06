@@ -1,21 +1,36 @@
-<h2>Forgot your password?</h2>
+<%= stylesheet_link_tag '/css/forms' %>
+<%= render('/templates/header') %>
+<%= render ("/templates/navbar") %>
+<div class="row">
+  <%= render ("/templates/ads") %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+  <div class="main">
+    <div class='forms'>
+    <h2 class="forms-h2">Forgot your password?</h2>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="forms-text">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="forms-text">
+         <%= f.label :username %><br />
+         <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+       </div>
+
+
+        <%= f.submit "Send me reset password instructions" %>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 
-  <div class="field">
-   <%= f.label :username %><br />
-   <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
- </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="notif">
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<%= render ("/templates/footer") %>

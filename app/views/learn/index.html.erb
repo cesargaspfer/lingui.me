@@ -1,0 +1,50 @@
+<%= render('/templates/header') %>
+<%= render ("/templates/navbar") %>
+
+<div class="row">
+  <%= render ("/templates/ads") %>
+
+  <div class="main">
+    <h2 class="tittle">Showing questions of
+      <% @learning = LearningLanguage.where(:user => current_user.id) %>
+      <% @countdown = @learning.count %>
+      <% @learning.each do |post2| %>
+        <%= post2.language %>
+        <% if @countdown != 1 %>
+          ,
+          <% @countdown -= 1 %>
+        <% end %>
+      <% end %>
+    </h2>
+    <p id="notice"><%= notice %></p>
+    <hr class="PostBarLink">
+    <% @i = 0 %>
+    <% @posts.each do |post| %>
+      <% if AuthorCommentPost.where(:post => post).count > 0 %>
+      <% @i += 1 %>
+        <div class="PostBoxLink">
+          <div class="PostLanguage">Question of <b><%= post.learning_language %></b> -
+            <% if post.difficulty == 1 %>
+              begin
+            <% elsif post.difficulty == 2 %>
+              intermediate
+            <% else %>
+              advanced
+            <% end %>
+          <br>Asnwer in <b><%= post.mother_language %></b></div>
+          <a href="/post/<%= post.id %>" class="PostLink">"<%= post.title %>"</a><br>
+          <div class="PostDescription">Posted by <a href="user/<%= post.user.id  %>" class="PostDescriptionLink"><%= post.user.login  %></a> in <%= post.created_at.strftime("%m/%d/%Y") %></div>
+          <div class="PostDetails"><%= AuthorCommentPost.where(:post => post).count %> Comments&nbsp;&nbsp;&nbsp;<%= post.upvotes %> Upvote</div>
+        </div>
+        <hr class="PostBarLink">
+      <% end %>
+    <% end %>
+    <% if @i == 0 %>
+      <h2 class="tittle">Nothing found!<br><br>:(<br><br>Come again soon...</h2>
+    <% end %>
+  </div>
+
+  <%= render ("/templates/notifications") %>
+</div>
+
+<%= render ("/templates/footer") %>
