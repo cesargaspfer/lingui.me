@@ -1,0 +1,7 @@
+
+
+<%= form_for :post, :html => { :method => :post } do |f| %>
+<%= f.select :user_id, @learningLanguage.collect { |learningLanguage| [learningLanguage.language, learningLanguage.language] } %>
+<%= f.select :user_id, @motherLanguage.collect { |motherLanguage| [motherLanguage.language, motherLanguage.language] } %>
+<%= f.submit "Log in" %>
+<% end %>

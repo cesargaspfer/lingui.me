@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :teach
-  resources :learn
-  resources :mother_languages
+  get 'ask', to: 'ask#index'
   root 'welcome#index'
+  get 'user', to: 'user#index'
+  get 'teach', to: 'teach#index'
+  get 'learn', to: 'learn#index'
+
+  # Para testes:
+  resources :mother_languages
   resources :author_comment_posts
   resources :bookmarks
   resources :comments

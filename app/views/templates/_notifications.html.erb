@@ -1,5 +1,5 @@
 <div class="notif">
-  <p align='center'><a class="CreatePostLink" href="ask.html">Post your question</a></p>
+  <p align='center'><a class="CreatePostLink" href="ask.html">Ask your question</a></p>
   <hr class="PostBarLink">
   <h2 align="center"><b>Your Notifications</b></h2>
   <hr class="notificationshr1">
@@ -7,7 +7,10 @@
   <% for i in 0..5 do %>
     <div class="notifications">
       <div class="notificationsDate">29/04/18</div>
-      <a href="user.html?id=0" class="notificationsLink">UserName</a>
+      <div class="PostDescription">Posted by
+        <%= link_to "UserName", user_path(id: 1), class: "PostDescriptionLink" %>
+         in 27/03/2020
+      </div>
       responded <a href="/postid" class="notificationsLink">your question</a>:<br>
       <div class="notificationsBox">
       You are wrong, "Bum dia" is written "Bom dia".

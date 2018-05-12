@@ -1,10 +1,11 @@
-<%= render('/templates/header') %>
 <%= render ("/templates/navbar") %>
 
 <div class="row">
   <%= render ("/templates/ads") %>
 
   <div class="main">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <h2 class="tittle">Showing questions of
       <% @mother = MotherLanguage.where(:user => current_user.id) %>
       <% @countdown = @mother.count %>
@@ -32,7 +33,10 @@
           <% end %>
           <br>Asnwer in <b><%= post.mother_language %></b></div>
         <a href="/post/<%= post.id %>" class="PostLink">"<%= post.title %>"</a><br>
-        <div class="PostDescription">Posted by <a href="user/<%= post.user.id  %>" class="PostDescriptionLink"><%= post.user.login  %></a> in <%= post.created_at.strftime("%m/%d/%Y") %></div>
+        <div class="PostDescription">Posted by
+          <%= link_to post.user.login, user_path(id: post.user.id), class: "PostDescriptionLink" %>
+           in <%= post.created_at.strftime("%m/%d/%Y") %>
+        </div>
         <div class="PostDetails"><%= AuthorCommentPost.where(:post => post).count %> Comments&nbsp;&nbsp;&nbsp;<%= post.upvotes %> Upvote</div>
       </div>
       <hr class="PostBarLink">
@@ -44,5 +48,3 @@
 
   <%= render ("/templates/notifications") %>
 </div>
-
-<%= render ("/templates/footer") %>

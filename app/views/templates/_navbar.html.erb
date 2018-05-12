@@ -2,7 +2,7 @@
   <a href="learn" class="btn-navbar">Learn</a>
   <a href="teach" class="btn-navbar">Teach</a>
   <% if user_signed_in? %>
-    <a href="user/<%= current_user.id  %>" class="btn-navbar">Me</a>
+    <%= link_to "Me", user_path(id: current_user.id),class: "btn-navbar" %>
   <% end %>
   <a href="options" class="btn-navbar">Options</a>
 </div>
