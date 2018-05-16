@@ -64,8 +64,8 @@ Bookmark.create(user: igor, post: post_allan)
 comment_renan = Comment.create(upvotes: 100, text: "Ruminate, dwell on, nibble, mull over. Bjs")
 AuthorCommentPost.create(user: renan, comment: comment_renan, post: post_allan)
 
-comment_renan = Comment.create(upvotes: 100, text: "Kartoffel")
-AuthorCommentPost.create(user: renan, comment: comment_renan, post: post_igor)
+comment_renan2 = Comment.create(upvotes: 100, text: "Kartoffel")
+AuthorCommentPost.create(user: renan, comment: comment_renan2, post: post_igor)
 
 comment_igor = Comment.create(upvotes: 50, text: "Sim, está correto. Bjs")
 AuthorCommentPost.create(user: igor, comment: comment_igor, post: post_renan)

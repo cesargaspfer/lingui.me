@@ -37,11 +37,13 @@
 
 <p>
   <strong>Answers:</strong>
+      <%if @comments.count==0%>
+      <p>There are no answers</p>
+      <%end%>
       <%@comments.each do |comment|%>
-      <p><%comment.text%></p>
-      <p>upvotes <%comment.upvotes%></p>
-      <p>answered <%comment.created_at.strftime("%m/%d/%Y")%></p>
-      <p>edited <%comment.updated_at%></p>
+      <p><%=comment.text%></p>
+      <p>upvotes <%=comment.upvotes%></p>
+      <p>answered <%=comment.created_at.strftime("%m/%d/%Y")%></p>
       <%end%>
 </p>
 
