@@ -3,8 +3,13 @@
 	-webkit-transition-duration: 0.3s; /* Safari */
   background-color: #f1f1f1;
 }
+
+.PostAnswer {
+
+}
+
 .PostBoxLink:hover {
-	background-color: #e6e6e6;
+  background-color: #e6e6e6;
 }
 .PostBarLink {
   margin-bottom: 2%;

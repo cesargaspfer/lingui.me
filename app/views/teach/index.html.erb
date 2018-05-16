@@ -6,7 +6,7 @@
   <div class="main">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <h2 class="tittle">Showing questions of
+    <h2 class="title">Showing questions of
       <% @mother = MotherLanguage.where(:user => current_user.id) %>
       <% @countdown = @mother.count %>
       <% @mother.each do |post2| %>
@@ -42,7 +42,7 @@
       <hr class="PostBarLink">
     <% end %>
     <% if @contagem == 0 %>
-      <h2 class="tittle">Nothing found!<br><br>:(<br><br>Come again soon...</h2>
+      <h2 class="title">Nothing found!<br><br>:(<br><br>Come again soon...</h2>
     <% end %>
   </div>
 

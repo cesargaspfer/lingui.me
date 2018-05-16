@@ -7,9 +7,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if(!defined? @user.login) %>
-      <h2 class="tittle">Ops! This user doesn't exist!</h2>
+      <h2 class="title">Oops! This user doesn't exist!</h2>
     <% else %>
-      <h2 class="tittle">Showing questions of <%= @user.login %></h2>
+      <h2 class="title">Showing questions of <%= @user.login %></h2>
       <hr class="PostBarLink">
       <p id="notice"><%= notice %></p>
       <% @contagem = 0 %>
@@ -18,13 +18,13 @@
         <div class="PostBoxLink">
           <div class="PostLanguage">Question of <b><%= post.learning_language %></b> -
             <% if post.difficulty == 1 %>
-              begin
+              beginner
             <% elsif post.difficulty == 2 %>
               intermediate
             <% else %>
               advanced
             <% end %>
-            <br>Asnwer in <b><%= post.mother_language %></b></div>
+            <br>Answer in <b><%= post.mother_language %></b></div>
           <a href="/post/<%= post.id %>" class="PostLink">"<%= post.title %>"</a><br>
           <div class="PostDescription">Posted by
             <%= link_to post.user.login, user_path(id: post.user.id), class: "PostDescriptionLink" %>
@@ -35,7 +35,7 @@
         <hr class="PostBarLink">
       <% end %>
       <% if @contagem == 0 %>
-        <h2 class="tittle">Nothing found!<br><br>:(<br><br>Come again soon...</h2>
+        <h2 class="title">Nothing found!<br><br>:(<br><br>Come again soon...</h2>
       <% end %>
     <% end %>
   </div>

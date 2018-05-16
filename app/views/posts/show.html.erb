@@ -2,12 +2,12 @@
 
 <p>
   <strong>Upvotes:</strong>
-  <%= @post.upvotes %>
+<%= @post.upvotes %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @post.user %>
+  <%= @post.user.login %>
 </p>
 
 <p>
@@ -33,6 +33,16 @@
 <p>
   <strong>Text:</strong>
   <%= @post.text %>
+</p>
+
+<p>
+  <strong>Answers:</strong>
+      <%@comments.each do |comment|%>
+      <p><%comment.text%></p>
+      <p>upvotes <%comment.upvotes%></p>
+      <p>answered <%comment.created_at.strftime("%m/%d/%Y")%></p>
+      <p>edited <%comment.updated_at%></p>
+      <%end%>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

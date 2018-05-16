@@ -11,6 +11,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @id = params[:id]
+    @post = Post.find_by(:id => @id)
+    @authorcommentposts = AuthorCommentPost.where(:post_id => @id)
+    @comments = Array.new
+    @authorcommentposts.each do |authorcommentpost|
+        @comments.push(Comment.find_by(:id => authorcommentpost.comment_id))
+    end
   end
 
   # GET /posts/new

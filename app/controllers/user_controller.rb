@@ -7,7 +7,7 @@ class UserController < ApplicationController
       @id = current_user.id
     end
     @contagem = 0
-    @user = User.find_by(:id => @id)
+    @user = current_user
     @posts = Post.where(:user => @user)
   end
 end
