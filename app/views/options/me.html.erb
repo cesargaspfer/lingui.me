@@ -1,0 +1,26 @@
+<%= render ("/templates/navbar") %>
+
+<div class="row">
+  <%= render ("/templates/ads") %>
+
+  <div class="main">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <h2 class="title">Showing questions of
+      <% @learning = LearningLanguage.where(:user => current_user.id) %>
+      <% @countdown = @learning.count %>
+      <% @learning.each do |x| %>
+        <%= x.language %>
+        <% if @countdown != 1 %>
+          ,
+          <% @countdown -= 1 %>
+        <% end %>
+      <% end %>
+    </h2>
+		<%= @user.methods %>
+    <p id="notice"><%= notice %></p>
+    <hr class="PostBarLink">
+  </div>
+
+  <%= render ("/templates/notifications") %>
+</div>

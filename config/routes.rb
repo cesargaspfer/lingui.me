@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'user', to: 'user#index'
   get 'teach', to: 'teach#index'
   get 'learn', to: 'learn#index'
+  get 'me', to: 'options#me'
 
   # Para testes:
   resources :mother_languages
