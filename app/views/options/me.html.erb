@@ -31,40 +31,12 @@
         <hr class="notificationshr1">
         <label for="title" class="forms-text">Teaching languages<br></label>
         <br>
-        <label class="container-check-box">English
-          <!-- <input type="checkbox" checked="checked" value="english"> -->
-          <input type="checkbox" value="english">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container-check-box">Portuguese
-          <input type="checkbox" value="portuguese">
-          <span class="checkmark"></span>
-        </label>
-        <% @learning = LearningLanguage.all %>
-        <% @countdown = @learning.count %>
-        <% @learning.each do |x| %>
+        <% @available_languages.each do |x| %>
           <label class="container-check-box"><%=x.language%>
             <input type="checkbox" value="spanish">
             <span class="checkmark"></span>
           </label>
-          <%= x.language %>
-          <% if @countdown != 1 %>
-            ,
-            <% @countdown -= 1 %>
-          <% end %>
         <% end %>
-        <label class="container-check-box">French
-          <input type="checkbox" value="french">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container-check-box">German
-          <input type="checkbox" value="german">
-          <span class="checkmark"></span>
-        </label>
-        <label class="container-check-box">Spanish
-          <input type="checkbox" value="spanish">
-          <span class="checkmark"></span>
-        </label>
         <input type="submit" value="Submit">
       </form>
     </div>
