@@ -1,7 +1,28 @@
 
+<%= render ("/templates/navbar") %>
+<div class="row">
+  <%= render ("/templates/ads") %>
+  <div class="main">
 
-<%= form_for :post, :html => { :method => :post } do |f| %>
-<%= f.select :user_id, @learningLanguage.collect { |learningLanguage| [learningLanguage.language, learningLanguage.language] } %>
-<%= f.select :user_id, @motherLanguage.collect { |motherLanguage| [motherLanguage.language, motherLanguage.language] } %>
-<%= f.submit "Log in" %>
-<% end %>
+    <%= form_with scope: :ask, url: ask_path, local: true do |f| %>
+    <%= f.label :learning_language, class: "title" %><br />
+    <%= f.select :learning_language, @learningLanguage.collect { |learningLanguage| [learningLanguage.language, learningLanguage.language] } %>
+    <%= f.label :answer_language, class: "title"%><br />
+    <%= f.select :mother_language, @motherLanguage.collect { |motherLanguage| [motherLanguage.language, motherLanguage.language] } %>
+    <%= f.label :title, class: "title" %><br />
+    <%= f.text_field :title %>
+    <%= f.label :question, class: "title" %><br />
+    <%= f.text_area :text, class: "forms-text",  id: "question" %>
+    <%= f.label :difficulty, class: "title" %><br />
+    <select name="ask[difficulty]" id="difficulty">
+      <option value="1">beginner</option>
+      <option value="2">intermediate</option>
+      <option value="3">advanced</option>
+    </select>
+
+    <%= f.submit "Ask" %>
+    <% end %>
+
+  </div>
+  <%= render ("/templates/notifications") %>
+</div>

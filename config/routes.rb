@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   get 'ask', to: 'ask#index'
+  post 'ask', to: 'ask#create'
   get 'user', to: 'user#index'
   get 'teach', to: 'teach#index'
   get 'learn', to: 'learn#index'
