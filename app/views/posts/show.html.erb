@@ -1,3 +1,10 @@
+
+<%= render ("/templates/navbar") %>
+<div class="row">
+  <%= render ("/templates/ads") %>
+  <div class="main">
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -46,6 +53,8 @@
       <p>answered <%=comment.created_at.strftime("%m/%d/%Y")%></p>
       <%end%>
 </p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+</div>
+<%= render ("/templates/notifications") %>
+</div>
+<!-- <%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %> -->
