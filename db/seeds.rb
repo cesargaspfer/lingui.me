@@ -21,7 +21,7 @@ allan.save!
 
 renan = User.new
 renan.email = 'renan@allan.com'
-renan.password = '#$taawktljasktlw4aaglj'
+renan.password = 'linguime'
 renan.username = 'renan'
 renan.save!
 
@@ -32,18 +32,30 @@ cesar.username = 'cesar'
 cesar.save!
 
 #LANGUAGES
-LearningLanguage.create(user: igor, language:'alemão')
-LearningLanguage.create(user: igor, language:'alemão')
-LearningLanguage.create(user: igor, language:'japonês')
-LearningLanguage.create(user: allan, language:'inglês')
-LearningLanguage.create(user: renan, language:'alemão')
-LearningLanguage.create(user: cesar, language:'hebraico')
+alemao = Language.new
+alemao.idiom = 'alemão'
+japones = Language.new
+japones.idiom = 'japonês'
+ingles = Language.new
+ingles.idiom = 'inglês'
+hebraico = Language.new
+hebraico.idiom = 'hebraico'
+portugues = Language.new
+portugues.idiom = 'português'
+idiche = Language.new
+idiche.idiom = 'ídiche'
 
-MotherLanguage.create(user:igor, language:'português')
-MotherLanguage.create(user:igor, language:'inglês')
-MotherLanguage.create(user:allan, language:'português')
-MotherLanguage.create(user:renan, language:'inglês')
-MotherLanguage.create(user:cesar, language:'ídiche')
+LearningLanguage.create(user: igor, language: alemao)
+LearningLanguage.create(user: igor, language: japones)
+LearningLanguage.create(user: allan, language: ingles)
+LearningLanguage.create(user: renan, language: alemao)
+LearningLanguage.create(user: cesar, language: hebraico)
+
+MotherLanguage.create(user:igor, language:portugues)
+MotherLanguage.create(user:igor, language:ingles)
+MotherLanguage.create(user:allan, language:portugues)
+MotherLanguage.create(user:renan, language:ingles)
+MotherLanguage.create(user:cesar, language:idiche)
 
 #POST
 post_igor = Post.create( upvotes:10, user:igor, difficulty:2,

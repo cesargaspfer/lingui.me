@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :languages
   root 'welcome#index'
   get 'ask', to: 'ask#index'
   post 'ask', to: 'ask#create'
   get 'user', to: 'user#index'
   get 'teach', to: 'teach#index'
   get 'learn', to: 'learn#index'
+  get 'options', to: 'options#options'
 
   # Para testes:
   resources :mother_languages

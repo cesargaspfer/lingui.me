@@ -10,7 +10,7 @@
       <% @mother = MotherLanguage.where(:user => current_user.id) %>
       <% @countdown = @mother.count %>
       <% @mother.each do |post2| %>
-        <%= post2.language %>
+        <%= post2.language.idiom %>
         <% if @countdown != 1 %>
           ,
           <% @countdown -= 1 %>

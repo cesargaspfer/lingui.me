@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :learning_langages
+  has_one :mother_langages
   def login=(login)
       @login = login
   end
