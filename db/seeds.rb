@@ -19,11 +19,11 @@ allan.password = '#$taawktljasktlw4aaglj'
 allan.username = 'allan'
 allan.save!
 
-renan = User.new
-renan.email = 'renan@allan.com'
-renan.password = 'linguime'
-renan.username = 'renan'
-renan.save!
+talys = User.new
+talys.email = 'talys@email.com'
+talys.password = 'linguime'
+talys.username = 'talys'
+talys.save!
 
 cesar = User.new
 cesar.email = 'cesar@allan.com'
@@ -48,13 +48,13 @@ idiche.idiom = 'ídiche'
 LearningLanguage.create(user: igor, language: alemao)
 LearningLanguage.create(user: igor, language: japones)
 LearningLanguage.create(user: allan, language: ingles)
-LearningLanguage.create(user: renan, language: alemao)
+LearningLanguage.create(user: talys, language: alemao)
 LearningLanguage.create(user: cesar, language: hebraico)
 
 MotherLanguage.create(user:igor, language:portugues)
 MotherLanguage.create(user:igor, language:ingles)
 MotherLanguage.create(user:allan, language:portugues)
-MotherLanguage.create(user:renan, language:ingles)
+MotherLanguage.create(user:talys, language:ingles)
 MotherLanguage.create(user:cesar, language:idiche)
 
 #POST
@@ -64,7 +64,7 @@ post_igor = Post.create( upvotes:10, user:igor, difficulty:2,
 post_allan = Post.create( upvotes:15, user:allan, difficulty:5,
         learning_language:'inglês', mother_language:'português', title:"Como se diz remoer em inglês", text:"Remoer no sentido de insistir no passado")
 
-post_renan = Post.create( upvotes:1, user:renan, difficulty:4,
+post_talys = Post.create( upvotes:1, user:talys, difficulty:4,
         learning_language:'alemão', mother_language:'português', title:"Como se diz a mulher bebe leite?", text:"Está correto? Die Frau trinkt Milch")
 
 post_cesar = Post.create( upvotes:2, user:cesar, difficulty:1,
@@ -73,11 +73,11 @@ post_cesar = Post.create( upvotes:2, user:cesar, difficulty:1,
 Bookmark.create(user: igor, post: post_allan)
 Bookmark.create(user: igor, post: post_allan)
 
-comment_renan = Comment.create(upvotes: 100, text: "Ruminate, dwell on, nibble, mull over. Bjs")
-AuthorCommentPost.create(user: renan, comment: comment_renan, post: post_allan)
+comment_talys = Comment.create(upvotes: 100, text: "Ruminate, dwell on, nibble, mull over. Bjs")
+AuthorCommentPost.create(user: talys, comment: comment_talys, post: post_allan)
 
-comment_renan2 = Comment.create(upvotes: 100, text: "Kartoffel")
-AuthorCommentPost.create(user: renan, comment: comment_renan2, post: post_igor)
+comment_talys2 = Comment.create(upvotes: 100, text: "Kartoffel")
+AuthorCommentPost.create(user: talys, comment: comment_talys2, post: post_igor)
 
 comment_igor = Comment.create(upvotes: 50, text: "Sim, está correto. Bjs")
-AuthorCommentPost.create(user: igor, comment: comment_igor, post: post_renan)
+AuthorCommentPost.create(user: igor, comment: comment_igor, post: post_talys)
