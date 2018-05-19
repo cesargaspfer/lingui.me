@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_02_181810) do
+ActiveRecord::Schema.define(version: 2018_05_19_161728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,19 +42,27 @@ ActiveRecord::Schema.define(version: 2018_05_02_181810) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "learning_languages", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "language"
+  create_table "languages", force: :cascade do |t|
+    t.string "idiom"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "learning_languages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "language_id"
+    t.index ["language_id"], name: "index_learning_languages_on_language_id"
     t.index ["user_id"], name: "index_learning_languages_on_user_id"
   end
 
   create_table "mother_languages", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "language_id"
+    t.index ["language_id"], name: "index_mother_languages_on_language_id"
     t.index ["user_id"], name: "index_mother_languages_on_user_id"
   end
 
@@ -95,7 +103,9 @@ ActiveRecord::Schema.define(version: 2018_05_02_181810) do
   add_foreign_key "author_comment_posts", "users"
   add_foreign_key "bookmarks", "posts"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "learning_languages", "languages"
   add_foreign_key "learning_languages", "users"
+  add_foreign_key "mother_languages", "languages"
   add_foreign_key "mother_languages", "users"
   add_foreign_key "posts", "users"
 end

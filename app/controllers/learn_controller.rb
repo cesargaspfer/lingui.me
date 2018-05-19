@@ -1,6 +1,8 @@
 class LearnController < ApplicationController
   before_action :authenticate_user!
   def index
-    @posts = Post.where(:learning_language => LearningLanguage.where(:user => current_user.id), :mother_language => MotherLanguage.where(:user => current_user.id))
+    @posts = Post.where(:learning_language => Language.find(LearningLanguage.where(:user => current_user.id).pluck(:language_id)).pluck(:idiom),
+                        :mother_language   => Language.find(MotherLanguage.where(:user => current_user.id).pluck(:language_id)).pluck(:idiom)
+                        )
   end
 end

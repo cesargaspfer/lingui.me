@@ -32,7 +32,7 @@
             advanced
           <% end %>
           <br>Asnwer in <b><%= post.mother_language %></b></div>
-        <a href="/post/<%= post.id %>" class="PostLink">"<%= post.title %>"</a><br>
+        <a href="/posts/<%= post.id %>" class="PostLink">"<%= post.title %>"</a><br>
         <div class="PostDescription">Posted by
           <%= link_to post.user.login, user_path(id: post.user.id), class: "PostDescriptionLink" %>
            in <%= post.created_at.strftime("%m/%d/%Y") %>
