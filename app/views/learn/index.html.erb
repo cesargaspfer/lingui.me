@@ -10,7 +10,7 @@
       <% @learning = LearningLanguage.where(:user => current_user.id) %>
       <% @countdown = @learning.count %>
       <% @learning.each do |x| %>
-        <%= x.language %>
+        <%= x.language.idiom %>
         <% if @countdown != 1 %>
           ,
           <% @countdown -= 1 %>
