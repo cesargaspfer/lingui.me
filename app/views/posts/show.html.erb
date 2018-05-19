@@ -3,7 +3,38 @@
 <div class="row">
   <%= render ("/templates/ads") %>
   <div class="main">
-
+    <a href="#" class="title">"<%= @post.title %>"</a><br>
+    <div class="PostLanguage">Question of <b><%= @post.learning_language %></b> -
+      <% if @post.difficulty == 1 %>
+        beginner
+      <% elsif @post.difficulty == 2 %>
+        intermediate
+      <% else %>
+        advanced
+      <% end %>
+    <br>Answer in <b><%= @post.mother_language %></b>
+    </div>
+    <div class="PostDescription">Posted by
+      <%= link_to @post.user.login, user_path(id: @post.user.id), class: "PostDescriptionLink" %>
+       in <%= @post.created_at.strftime("%m/%d/%Y") %>
+    </div>
+    <div class="questionsBox">
+      <%= @post.text %>
+    </div>
+    <% @comments.each do |comment| %>
+      <div class="commentBox">
+        <%= comment.text %>
+      </div>
+    <%end%>
+    <%= form_with url: comments_path do |form|%>
+      <div class="commentBox">
+        <%= form.hidden_field :post_id, value: @post.id %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.text_area :text, id: "question"%>
+        <%= form.submit "Comment" %>
+      </div>
+    <% end %>
+<!--
 
 <p id="notice"><%= notice %></p>
 
@@ -52,7 +83,7 @@
       <p>upvotes <%=comment.upvotes%></p>
       <p>answered <%=comment.created_at.strftime("%m/%d/%Y")%></p>
       <%end%>
-</p>
+</p> -->
 </div>
 <%= render ("/templates/notifications") %>
 </div>
