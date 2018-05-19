@@ -6,9 +6,9 @@
 
     <%= form_with scope: :ask, url: ask_path, local: true do |f| %>
     <%= f.label :learning_language, class: "title" %><br />
-    <%= f.select :learning_language, @learningLanguage.collect { |learningLanguage| [learningLanguage.language, learningLanguage.language] } %>
+    <%= f.select :learning_language, @learningLanguage.collect { |learningLanguage| [learningLanguage.language.idiom, learningLanguage.language.idiom] } %>
     <%= f.label :answer_language, class: "title"%><br />
-    <%= f.select :mother_language, @motherLanguage.collect { |motherLanguage| [motherLanguage.language, motherLanguage.language] } %>
+    <%= f.select :mother_language, @motherLanguage.collect { |motherLanguage| [motherLanguage.language.idiom, motherLanguage.language.idiom] } %>
     <%= f.label :title, class: "title" %><br />
     <%= f.text_field :title %>
     <%= f.label :question, class: "title" %><br />
