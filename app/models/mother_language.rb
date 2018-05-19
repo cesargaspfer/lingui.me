@@ -1,4 +1,4 @@
 class MotherLanguage < ApplicationRecord
   belongs_to :user
-  has_one :language
+  belongs_to :language
 end
