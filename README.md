@@ -38,13 +38,12 @@ A partir desses elementos, o model do projeto é construído.
 A dificuldade encontrada foi fazer o controller do options. O Usuário deve selecionar no formulário do options as linguas que quer aprender e as que quer ensinar. Para isso, o controler deveria checar cada linguagem e criar ou deletar a relação entre o usuário e linguagem nas tabelas, entretanto encontramos muita dificuldade nessa parte.
 
 4) Instalação:
-Para instalar o projeto, você deve utilizar o rails 5.2.0 e o ruby 2.5.1p57, pode ser instalado seguindo esse tutorial: https://gorails.com/setup/ubuntu/16.04
-Utilizamos o postgress que pode ser instalado também seguindo o tutorial do mesmo site.
-Crie um usuário "linguime" com senha "linguime" no postgress
-Na pasta linguime, certifique-se de que as versões do rails e do ruby são as mesmas das descritas a cima, caso não esteja, execute os comandos "cd", "/bin/bash --login", "rvm use 2.5.1 --default" e volte para a pasta linguime.
-Na pasta linguime, execute os comandos "rails db:drop", "rails db:create", "rails db:migrate", "rails db:seed".
-Execute "rails server" para "rodar" o servidor.
-No navegador, digite o endereço "localhost:3000".
-Utilize o usuário "igor", com a senha "#$taawktljasktlw4aaglj", ele está aprendendo alemão e japonês e está ensenando inglês e português.
+- Para instalar o projeto, você deve utilizar o rails 5.2.0 e o ruby 2.5.1p57 e o postgress que podem ser instalados seguindo esse tutorial: https://gorails.com/setup/ubuntu/16.04
+- Crie um usuário "linguime" com senha "linguime" no postgress
+- Na pasta linguime, certifique-se de que as versões do rails e do ruby são as mesmas das descritas a cima, caso não esteja, execute os comandos "cd", "/bin/bash --login", "rvm use 2.5.1 --default" e volte para a pasta linguime.
+- Na pasta linguime, execute os comandos "rails db:drop", "rails db:create", "rails db:migrate", "rails db:seed".
+- Execute "rails server" para "rodar" o servidor.
+- No navegador, digite o endereço "localhost:3000".
+- Utilize o usuário "igor", com a senha "#$taawktljasktlw4aaglj", ele está aprendendo alemão e japonês e está ensenando inglês e português.
 
 
