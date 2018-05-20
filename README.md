@@ -1,4 +1,5 @@
 Para acessar nosso projeto: https://linguime.herokuapp.com
+Link do trello: https://trello.com/b/Ehv93O52/ep-do-gubi
 
 0) O projeto é um site onde os usuários podem postar textos na língua que estão aprendendo e corrigir textos escritos em lingua que eles dominam.
 Dessa maneira, a comunidade no site constrói um crescimento mútuo linguístico pelo ensino e aprendizado através da escrita e correções de texto em forma de posts.
