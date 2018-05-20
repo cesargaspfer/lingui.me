@@ -1,5 +1,6 @@
-Para acessar nosso projeto: https://linguime.herokuapp.com
-Link do trello: https://trello.com/b/Ehv93O52/ep-do-gubi
+Para acessar nosso projeto: https://linguime.herokuapp.com  
+Faça login com usuário "talys" e senha "linguime"  
+Link do trello: https://trello.com/b/Ehv93O52/ep-do-gubi  
 
 0) O projeto é um site onde os usuários podem postar textos na língua que estão aprendendo e corrigir textos escritos em lingua que eles dominam.
 Dessa maneira, a comunidade no site constrói um crescimento mútuo linguístico pelo ensino e aprendizado através da escrita e correções de texto em forma de posts.
@@ -38,13 +39,14 @@ A partir desses elementos, o model do projeto é construído.
 4) Dificuldades encontradas:
 A dificuldade encontrada foi fazer o controller do options. O Usuário deve selecionar no formulário do options as linguas que quer aprender e as que quer ensinar. Para isso, o controler deveria checar cada linguagem e criar ou deletar a relação entre o usuário e linguagem nas tabelas, entretanto encontramos muita dificuldade nessa parte.
 
-5) Instalação:
+5) Instalação Local:
+- Essas instruções servem para hostear o projeto localmente em um ambiente de development
 - Para instalar o projeto, você deve utilizar o rails 5.2.0 e o ruby 2.5.1p57 e o postgress que podem ser instalados seguindo esse tutorial: https://gorails.com/setup/ubuntu/16.04
 - Crie um usuário "linguime" com senha "linguime" no postgress
-- Na pasta linguime, certifique-se de que as versões do rails e do ruby são as mesmas das descritas a cima, caso não esteja, execute os comandos "cd", "/bin/bash --login", "rvm use 2.5.1 --default" e volte para a pasta linguime.
+- Na pasta linguime, certifique-se de que as versões do rails e do ruby são as mesmas das descritas a cima e, caso não sejam, execute os comandos "cd", "/bin/bash --login", "rvm use 2.5.1 --default" e volte para a pasta linguime.
 - Na pasta linguime, execute os comandos "rails db:drop", "rails db:create", "rails db:migrate", "rails db:seed".
 - Execute "rails server" para "rodar" o servidor.
 - No navegador, digite o endereço "localhost:3000".
-- Utilize o usuário "igor", com a senha "#$taawktljasktlw4aaglj", ele está aprendendo alemão e japonês e está ensenando inglês e português.
+- Utilize o usuário "talys", com a senha "linguime", ele está aprendendo alemão e está ensinando inglês.
 
 
