@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   get 'user', to: 'user#index'
   get 'teach', to: 'teach#index'
   get 'learn', to: 'learn#index'
-  get 'options', to: 'options#options'
+  get 'options', to: 'options#index'
+  post 'options', to: 'options#create'
+  get 'languages', to: 'languages#index'
 
   # Para testes:
   resources :mother_languages
+  resources :languages
   resources :author_comment_posts
   resources :bookmarks
   resources :comments
