@@ -1,0 +1,36 @@
+<%= render ("/templates/navbar") %>
+
+<div class="row">
+  <%= render ("/templates/ads") %>
+  <div class="main">
+    <div class='forms'>
+      <%=form_with url: options_path do |f| %>
+        <%= f.label :learning_languages, class: "title" %><br />
+        <br>
+        <% @available_languages.each do |x| %>
+
+          <label class="container-check-box"><%=x.idiom%>
+            <%= f.check_box :pass, {checked: true, checked_value: x.id, unchecked_value: nil}  %>
+            <span class="checkmark"></span>
+          </label>
+        <% end %>
+        <hr class="notificationshr1">
+        <label for="title" class="forms-text">Teaching languages<br></label>
+        <br>
+        <% @available_languages.each do |x| %>
+          <label class="container-check-box"><%=x.idiom%>
+            <%= f.check_box :pass, {checked: true, checked_value: x.id, unchecked_value: nil}  %>
+
+            <span class="checkmark"></span>
+          </label>
+        <% end %>
+        <%= f.submit "Comment" %>
+      <% end %>
+    </div>
+		<!-- <%= @user.methods %> -->
+    <p id="notice"><%= notice %></p>
+    <hr class="PostBarLink">
+  </div>
+
+  <%= render ("/templates/notifications") %>
+</div>
