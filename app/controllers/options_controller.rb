@@ -9,31 +9,31 @@ class OptionsController < ApplicationController
   end
 
   def create
-    @count = 0
-    @available_languages = Language.all
-    get_mother_languages(@current_user)
-    get_learning_languages(@current_user)
-    @available_languages.each do |language|
-      if(params["teach#{@count}".to_sym] == true)
-        if !@mother_languages.include?(language)
-          add_mother_language language
-        end
-      else
-        if @mother_languages.include?(language)
-          remove_mother_language language
-        end
-      end
-
-      if(params["learn#{@count}".to_sym] == true)
-        if !@learning_languages.include?(language)
-          add_learning_language language
-        end
-      else
-        if @learning_languages.include? language
-          remove_learning_language language
-        end
-      end
-    end
+    # @count = 0
+    # @available_languages = Language.all
+    # get_mother_languages(@current_user)
+    # get_learning_languages(@current_user)
+    # @available_languages.each do |language|
+    #   if(params["teach#{@count}".to_sym] == true)
+    #     if !@mother_languages.include?(language)
+    #       add_mother_language language
+    #     end
+    #   else
+    #     if @mother_languages.include?(language)
+    #       remove_mother_language language
+    #     end
+    #   end
+    #
+    #   if(params["learn#{@count}".to_sym] == true)
+    #     if !@learning_languages.include?(language)
+    #       add_learning_language language
+    #     end
+    #   else
+    #     if @learning_languages.include? language
+    #       remove_learning_language language
+    #     end
+    #   end
+    # end
   end
 
   def get_mother_languages(user)
