@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
 
     @author_comment = AuthorCommentPost.new(user: @user, post: @post, comment: @comment)
     @author_comment.save!
-    format.html { redirect_to 'learn', notice: 'Comment was successfully updated.' }
+    redirect_to @post, notice: 'Comment was successfully updated.'
   end
 
   # PATCH/PUT /comments/1
