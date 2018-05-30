@@ -9,31 +9,25 @@ class OptionsController < ApplicationController
   end
 
   def create
-    # @count = 0
-    # @available_languages = Language.all
-    # get_mother_languages(@current_user)
-    # get_learning_languages(@current_user)
-    # @available_languages.each do |language|
-    #   if(params["teach#{@count}".to_sym] == true)
-    #     if !@mother_languages.include?(language)
-    #       add_mother_language language
-    #     end
-    #   else
-    #     if @mother_languages.include?(language)
-    #       remove_mother_language language
-    #     end
-    #   end
-    #
-    #   if(params["learn#{@count}".to_sym] == true)
-    #     if !@learning_languages.include?(language)
-    #       add_learning_language language
-    #     end
-    #   else
-    #     if @learning_languages.include? language
-    #       remove_learning_language language
-    #     end
-    #   end
-    # end
+    @count = 0
+    @available_languages = Language.all
+    get_mother_languages(@current_user)
+    get_learning_languages(@current_user)
+    @available_languages.each do |language|
+      if(params["teach#{@count}".to_sym] == "1")
+        add_mother_language(language)
+      else
+        remove_mother_language(language)
+      end
+
+      if(params["learn#{@count}".to_sym] == "1")
+        add_learning_language(language)
+      else
+        remove_learning_language(language)
+      end
+      @count = @count+1
+    end
+    redirect_to options_url
   end
 
   def get_mother_languages(user)
@@ -53,30 +47,25 @@ class OptionsController < ApplicationController
   end
 
   def add_mother_language(language)
-    @user = User.find_by(:id => current_user.id)
-    @language = Language.find_by(:id => language.id)
-    newLanguage = MotherLanguage.new(user: @user, language: @language)
+    newLanguage = MotherLanguage.new(user: current_user, language: language)
     newLanguage.save!
   end
-  def remove_mother_language(language)
-    @user = User.find_by(:id => current_user.id)
-    @language = Language.find_by(:id => language.id)
 
-    language = MotherLanguage.find_by(user: @user, language: @language)
-    language.destroy
+  def remove_mother_language(language)
+    motherLanguage = MotherLanguage.find_by(user: current_user, language: language)
+    if(motherLanguage != nil)
+      motherLanguage.destroy
+    end
   end
 
   def add_learning_language(language)
-    @user = User.find_by(:id => current_user.id)
-    @language = Language.find_by(:id => language.id)
-    newLanguage = LearningLanguage.new(user: @user, language: @language)
+    newLanguage = LearningLanguage.new(user: current_user, language: language)
     newLanguage.save!
   end
   def remove_learning_language(language)
-    @user = User.find_by(:id => current_user.id)
-    @language = Language.find_by(:id => language.id)
-
-    language = LearningLanguage.find_by(user: @user, language: @language)
-    language.destroy
+    learningLanguage = LearningLanguage.find_by(user: current_user, language: language)
+    if(learningLanguage != nil)
+      learningLanguage.destroy
+    end
   end
 end
