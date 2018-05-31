@@ -38,6 +38,14 @@
 .PostDescriptionLink:hover {
   color: #19611e;
 }
+.PostDeleteLink {
+  float: right;
+  text-decoration: none;
+  color: #B73330;
+}
+.PostDeleteLink:hover {
+  color: #7B2220;
+}
 .PostLanguage {
   color: #656565;
   text-decoration: none;

@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  # before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -54,11 +55,12 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
+    if AuthorCommentPost.where(user_id: current_user, post_id: params[:post_id], comment_id: params[:comment_id]).count > 0
+      AuthorCommentPost.find_by(user_id: current_user, post_id: params[:post_id], comment_id: params[:comment_id]).destroy
+      Comment.find_by(id: params[:comment_id]).destroy
     end
+    redirect_to post_path(id: params[:post_id]), notice: 'Comment was successfully deleted.'
+
   end
 
   private
