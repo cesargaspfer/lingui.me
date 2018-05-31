@@ -13,10 +13,10 @@ class PostsController < ApplicationController
   def show
     @id = params[:id]
     @post = Post.find_by(:id => @id)
-    @authorcommentposts = AuthorCommentPost.where(:post_id => @id)
-    @comments = Array.new
-    @authorcommentposts.each do |authorcommentpost|
-        @comments.push(Comment.find_by(:id => authorcommentpost.comment_id))
+    @acp = AuthorCommentPost.where(:post_id => @id).includes(:user, :comment)
+    @bookmarked = false;
+    if Bookmark.where(user_id: current_user.id, post_id: @id).count > 0
+      @bookmarked = true
     end
   end
 

@@ -4,7 +4,18 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-    @bookmarks = Bookmark.all
+
+    bookSearch = Bookmark.where(user_id: current_user.id, post_id: params[:post_id])
+
+    if bookSearch.count == 0
+      bookmark = Bookmark.new(user_id: current_user.id, post_id: params[:post_id])
+      bookmark.save!
+      redirect_to post_path(id: params[:post_id]), notice: 'Bookmarked!'
+    else
+      bookmark = Bookmark.find_by(user_id: current_user.id, post_id: params[:post_id])
+      bookmark.destroy
+      redirect_to post_path(id: params[:post_id]), notice: 'Bookmark undone!'
+    end
   end
 
   # GET /bookmarks/1
@@ -24,17 +35,18 @@ class BookmarksController < ApplicationController
   # POST /bookmarks
   # POST /bookmarks.json
   def create
-    @bookmark = Bookmark.new(bookmark_params)
-
-    respond_to do |format|
-      if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
-        format.json { render :show, status: :created, location: @bookmark }
-      else
-        format.html { render :new }
-        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
-      end
-    end
+    render plain: params[:post].inspect
+    # @bookmark = Bookmark.new(bookmark_params)
+    #
+    # respond_to do |format|
+    #   if @bookmark.save
+    #     format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
+    #     format.json { render :show, status: :created, location: @bookmark }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @bookmark.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /bookmarks/1

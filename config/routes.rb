@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :languages
   root 'welcome#index'
   get 'ask', to: 'ask#index'
@@ -9,7 +10,10 @@ Rails.application.routes.draw do
   get 'options', to: 'options#index'
   post 'options', to: 'options#create'
   get 'languages', to: 'languages#index'
-
+  get 'notifications', to: 'notifications#index'
+  # get 'bookmarks', to: 'notifications#index'
+  # get 'posts', to: 'posts#index'
+  
   # Para testes:
   resources :mother_languages
   resources :languages

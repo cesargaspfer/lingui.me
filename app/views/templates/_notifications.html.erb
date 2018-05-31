@@ -6,22 +6,19 @@
   <h2 align="center"><b>Your Notifications</b></h2>
   <hr class="notificationshr1">
 
-  <% for i in 0..5 do %>
+  <%  AuthorCommentPost.where(post_id: Bookmark.where(:user_id => current_user.id).pluck(:post_id)).includes(:user, :post, :comment).order("created_at DESC").take(7).each do |acp|  %>
     <div class="notifications">
-      <div class="notificationsDate">29/04/18</div>
-      <div class="PostDescription">Posted by
-        <%= link_to "UserName", user_path(id: 1), class: "PostDescriptionLink" %>
-         in 27/03/2020
+      <div class="notificationsDate"><%= acp.created_at.strftime("%m/%d/%Y") %></div>
+      <div class="PostDescription"><%= link_to acp.user.username, user_path(id: acp.user.id), class: "PostDescriptionLink" %>
+      responded <%= link_to " a bookmarked question", post_path(id: acp.post_id), class: "notificationsLink" %>:<br>
       </div>
-      responded <a href="/posts/1" class="notificationsLink">your question</a>:<br>
       <div class="notificationsBox">
-      You are wrong, "Bum dia" is written "Bom dia".
+      <%= acp.comment.text %>
       </div>
     </div>
     <hr class="notificationshr1">
   <% end %>
-
-  <h2 align="center"><b><a href="/posts/1" class="notificationsLink">See more</a></h2>
+  <h2 align="center"><b><%= link_to "See more", notifications_path(), class: "notificationsLink" %></h2>
 
   </div>
 </div>

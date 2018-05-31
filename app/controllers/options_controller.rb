@@ -3,31 +3,41 @@ class OptionsController < ApplicationController
 
   def index
     @user = current_user
-    get_mother_languages(@user)
-    get_learning_languages(@user)
+    ml = get_mother_languages(@user)
+    ll = get_learning_languages(@user)
+    # render plain: ll.inspect()
     @available_languages = Language.all
   end
 
   def create
     @count = 0
     @available_languages = Language.all
-    get_mother_languages(@current_user)
-    get_learning_languages(@current_user)
+    ml = get_mother_languages(@current_user)
+    ll = get_learning_languages(@current_user)
+    puts ll
     @available_languages.each do |language|
       if(params["teach#{@count}".to_sym] == "1")
-        add_mother_language(language)
+        if(!ml.map{|a| a.language_id}.include? language.id)
+          add_mother_language(language)
+        end
       else
-        remove_mother_language(language)
+        if(ml.map{|a| a.language_id}.include? language.id)
+          remove_mother_language(language)
+        end
       end
 
       if(params["learn#{@count}".to_sym] == "1")
-        add_learning_language(language)
+        if(!ll.map{|a| a.language_id}.include? language.id)
+          add_learning_language(language)
+        end
       else
-        remove_learning_language(language)
+        if(ll.map{|a| a.language_id}.include? language.id)
+          remove_learning_language(language)
+        end
       end
       @count = @count+1
     end
-    redirect_to options_url
+    redirect_to learn_url
   end
 
   def get_mother_languages(user)
