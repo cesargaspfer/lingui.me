@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :learning_langages
   has_one :mother_langages
+  validates_presence_of :username, :password, :email
+
   def login=(login)
       @login = login
   end
