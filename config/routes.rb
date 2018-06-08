@@ -13,13 +13,17 @@ Rails.application.routes.draw do
   get 'notifications', to: 'notifications#index'
   # get 'bookmarks', to: 'notifications#index'
   # get 'posts', to: 'posts#index'
-  
+
   # Para testes:
   resources :mother_languages
   resources :languages
   resources :author_comment_posts
   resources :bookmarks
-  resources :comments
+  resources :comments do
+    member do
+      get :change_upvote
+    end
+  end
   resources :posts
   resources :learning_languages
   devise_for :users

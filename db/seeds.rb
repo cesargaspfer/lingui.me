@@ -73,11 +73,11 @@ post_cesar = Post.create( upvotes:2, user:cesar, difficulty:1,
 Bookmark.create(user: igor, post: post_allan)
 Bookmark.create(user: igor, post: post_allan)
 
-comment_talys = Comment.create(upvotes: 100, text: "Ruminate, dwell on, nibble, mull over. Bjs")
+comment_talys = Comment.create(upvoted: true, text: "Ruminate, dwell on, nibble, mull over. Bjs")
 AuthorCommentPost.create(user: talys, comment: comment_talys, post: post_allan)
 
-comment_talys2 = Comment.create(upvotes: 100, text: "Kartoffel")
+comment_talys2 = Comment.create(upvoted: false, text: "Kartoffel")
 AuthorCommentPost.create(user: talys, comment: comment_talys2, post: post_igor)
 
-comment_igor = Comment.create(upvotes: 50, text: "Sim, está correto. Bjs")
+comment_igor = Comment.create(upvoted: true, text: "Sim, está correto. Bjs")
 AuthorCommentPost.create(user: igor, comment: comment_igor, post: post_talys)

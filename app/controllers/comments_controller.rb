@@ -8,6 +8,15 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
+  def change_upvote
+    comment = Comment.find(params[:id])
+    acp = AuthorCommentPost.find_by(:comment_id => comment.id)
+    post = Post.find_by(:id => acp.post.id)
+    comment.upvoted = !comment.upvoted # flop the status
+    comment.save
+    redirect_to post_path(post)
+  end
+
   # GET /comments/1
   # GET /comments/1.json
   def show
