@@ -24,11 +24,12 @@ A partir desses elementos, o model do projeto é construído.
 - Feed de Aprendizado (feed onde aparece posts que o usuário logado pode utilizar para aprender)
 - Feed Pessoal (feed onde aparece os posts feitos pelo usuário logado)
 - Feed de Usuários (feed onde aparece os posts feitos por um usuário específico)
-- Opções (página onde o usuário pode deslogar do site, definir as línguas de aprendizado, as línguas mães, entre outras coisas). Foi implementado apenas a visualização e o formulário com os checkbox corretamente pré-selecionados, entretanto encontramos dificuldades ao implementar o controller, esse está sendo nosso foco de implementação atual.
+- Opções (página onde o usuário pode definir as línguas de aprendizado e as línguas mães).
 - Post (uma página onde é possível visualizar o post por inteiro com os seus comentários)
 - Criação de Post (página onde o usuário pode criar um post)
 - Todos os models (exceto pelo bookmark que será no próxima fase). Todos estão funcionando como devem.
 - Os scaffolds de todos os models, mas apenas para o development e para testes.
+- O usuário pode deletar seus comentários/ respostas em um Post
 
 3) O que iremos implementar:
 - A funcionalidade do opções (comunicação com o banco de dados)
@@ -36,8 +37,9 @@ A partir desses elementos, o model do projeto é construído.
 - Botões de "novas perguntas" e "perguntas anteriores" nas páginas, para melhor organização
 - Possivelmente adicionaremos traduções, mas isso não é a prioridade no momento, estamos focando mesmo no site em sí
 
-4) Dificuldades encontradas:
-A dificuldade encontrada foi fazer o controller do options. O Usuário deve selecionar no formulário do options as linguas que quer aprender e as que quer ensinar. Para isso, o controler deveria checar cada linguagem e criar ou deletar a relação entre o usuário e linguagem nas tabelas, entretanto encontramos muita dificuldade nessa parte.
+4) Testes:
+- Como especificado nessa fase, implementamos os testes de unidade para todos os modelos, verificando o comportamento do banco ao inserirmos dados válidos ou nulos.
+- Para rodar os testes, siga os passos da instalação local (5) e execute os comandos `rails db:test:prepare; rake`
 
 5) Instalação Local:
 - Essas instruções servem para hostear o projeto localmente em um ambiente de development
@@ -48,5 +50,3 @@ A dificuldade encontrada foi fazer o controller do options. O Usuário deve sele
 - Execute "rails server" para "rodar" o servidor.
 - No navegador, digite o endereço "localhost:3000".
 - Utilize o usuário "talys", com a senha "linguime", ele está aprendendo alemão e está ensinando inglês.
-
-
