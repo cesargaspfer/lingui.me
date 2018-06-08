@@ -19,21 +19,22 @@ A partir desses elementos, o model do projeto é construído.
 
 2) Funcionalidade implementadas:
 - Login/Sign In
-- Página Inicial (que direciona para o feed de ensino ou de aprendizado)
-- Feed de Ensino (feed onde aparece posts que o usuário logado pode corrigir)
-- Feed de Aprendizado (feed onde aparece posts que o usuário logado pode utilizar para aprender)
-- Feed Pessoal (feed onde aparece os posts feitos pelo usuário logado)
-- Feed de Usuários (feed onde aparece os posts feitos por um usuário específico)
+- Página Inicial (que direciona para o feed de ensino ou de aprendizado).
+- Feed de Ensino (feed onde aparece posts que o usuário logado pode corrigir).
+- Feed de Aprendizado (feed onde aparece posts que o usuário logado pode utilizar para aprender).
+- Feed Pessoal (feed onde aparece os posts feitos pelo usuário logado).
+- Feed de Usuários (feed onde aparece os posts feitos por um usuário específico).
 - Opções (página onde o usuário pode definir as línguas de aprendizado e as línguas mães).
-- Post (uma página onde é possível visualizar o post por inteiro com os seus comentários)
+- Post (uma página onde é possível visualizar o post por inteiro com os seus comentários).
+- Bookmark (marcar um post para o usuário receber notificações de novos comentários).
+- Notificações
 - Criação de Post (página onde o usuário pode criar um post)
-- Todos os models (exceto pelo bookmark que será no próxima fase). Todos estão funcionando como devem.
+- Todos os models estão funcionando como devem.
 - Os scaffolds de todos os models, mas apenas para o development e para testes.
 - O usuário pode deletar seus comentários/ respostas em um Post
 
 3) O que iremos implementar:
 - A funcionalidade do opções (comunicação com o banco de dados)
-- Bookmark/Notificações
 - Botões de "novas perguntas" e "perguntas anteriores" nas páginas, para melhor organização
 - Possivelmente adicionaremos traduções, mas isso não é a prioridade no momento, estamos focando mesmo no site em sí
 
