@@ -47,6 +47,7 @@ A partir desses elementos, o model do projeto é construído.
 - Para instalar o projeto, você deve utilizar o rails 5.2.0 e o ruby 2.5.1p57 e o postgress que podem ser instalados seguindo esse tutorial: https://gorails.com/setup/ubuntu/16.04
 - Crie um usuário "linguime" com senha "linguime" no postgress
 - Na pasta linguime, certifique-se de que as versões do rails e do ruby são as mesmas das descritas a cima e, caso não sejam, execute os comandos "cd", "/bin/bash --login", "rvm use 2.5.1 --default" e volte para a pasta linguime.
+- Execute 'bin/rails db:environment:set RAILS_ENV=development'
 - Na pasta linguime, execute os comandos "rails db:drop", "rails db:create", "rails db:migrate", "rails db:seed".
 - Execute "rails server" para "rodar" o servidor.
 - No navegador, digite o endereço "localhost:3000".

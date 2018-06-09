@@ -37,7 +37,15 @@
             <%= link_to post.user.login, user_path(id: post.user.id), class: "PostDescriptionLink" %>
              in <%= post.created_at.strftime("%m/%d/%Y") %>
           </div>
-          <div class="PostDetails"><%= AuthorCommentPost.where(:post => post).count %> Comments&nbsp;&nbsp;&nbsp;<%= post.upvotes %> Upvote</div>
+          <div class="PostDetails"><% commCount = AuthorCommentPost.where(:post => post).count %>
+            <%= commCount %>
+            <% if commCount <= 1 %>
+              Comment,
+            <% else %>
+              Comments,
+            <% end %>
+            &nbsp;&nbsp;&nbsp;<%= post.upvotes %> Upvoted
+          </div>
         </div>
         <hr class="PostBarLink">
       <% end %>

@@ -12,8 +12,17 @@ class CommentsController < ApplicationController
     comment = Comment.find(params[:id])
     acp = AuthorCommentPost.find_by(:comment_id => comment.id)
     post = Post.find_by(:id => acp.post.id)
+
+    # Updates the upvoted comments count of post
+    if comment.upvoted == false
+      post.upvotes += 1
+    else
+      post.upvotes -= 1
+    end
+    
     comment.upvoted = !comment.upvoted # flop the status
     comment.save
+    post.save
     redirect_to post_path(post)
   end
 
@@ -36,7 +45,7 @@ class CommentsController < ApplicationController
   def create
     params[:status]
 
-    @comment = Comment.new(text: params[:text], upvotes: 0)
+    @comment = Comment.new(text: params[:text], upvoted: false)
     @comment.save!
 
     @user = User.find_by(:id => params[:user_id])

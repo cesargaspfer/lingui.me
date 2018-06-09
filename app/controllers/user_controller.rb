@@ -8,6 +8,6 @@ class UserController < ApplicationController
     end
     @contagem = 0
     @user = User.find_by(:id => @id)
-    @posts = Post.where(:user => @user)
+    @posts = Post.where(:user => @user).order("created_at DESC")
   end
 end
