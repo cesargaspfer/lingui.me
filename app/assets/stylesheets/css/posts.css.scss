@@ -23,7 +23,22 @@
 .PostLink:hover {
   color: #19611e;
 }
-
+.UpvoteLinkTrue {
+  color: #26902D;
+  text-decoration: none;
+  font-size: 120%;
+}
+.UpvoteLinkTrue:hover {
+  color: #19611e;
+}
+.UpvoteLinkFalse {
+  color: #B7A630;
+  text-decoration: none;
+  font-size: 120%;
+}
+.UpvoteLinkFalse:hover {
+  color: #948415;
+}
 .PostDescription {
   color: #313131;
   text-decoration: none;

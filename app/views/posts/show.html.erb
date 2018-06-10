@@ -37,9 +37,9 @@
           <%= acp.comment.text %>
         </h3>
         <% if acp.comment.upvoted%>
-          <%= link_to "upvoted!", change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLink" %>
+          <%= link_to "upvoted!", change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLinkTrue" %>
         <% else %>
-          <%= link_to "upvote!", change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLink" %>
+          <%= link_to "upvote!", change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLinkFalse" %>
         <% end %>
         <% if acp.user.id == current_user.id %>
           <%= link_to 'Delete', {:controller => "comments", action: :destroy,
