@@ -1,4 +1,5 @@
 class AskController < ApplicationController
+  before_action :authenticate_user!
   def index
     @post = Post.new
     @learningLanguage = LearningLanguage.where(:user => current_user.id)
