@@ -7,19 +7,19 @@
   <%= render ("/templates/navbar") %>
 <% end %>
 <h1 class="forms-h2" align="center"><br><br>
-  Welcome to Lingui.me!<br>
+  <%= t('welcome') %><br>
 </h1>
 <h2 class="forms-h2" align="center">
-  Where YOU can learn any language easily!
+  <%= t('welcome_description') %>
 <br><br></h2>
 
 <h3 class="forms-h2" align="center">
-  What do you want to do?<br><br>
+  <%= t('welcome_do') %><br><br>
   <% if !user_signed_in? %>
-    <a href="users/sign_up" >Sign up</a> &nbsp&nbsp&nbsp&nbsp&nbsp
-    <a href="users/sign_in" >Log in</a>
+    <%= link_to t("login"), teach_path()%> &nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= link_to t("sign_up"), teach_path()%>
   <% else %>
-    <a href="learn" >Learn</a> &nbsp&nbsp&nbsp&nbsp&nbsp
-    <a href="teach" >Teach</a>
+    <%= link_to t("learn"), learn_path(dif: 1) %> &nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= link_to t("teach"), teach_path()%>
   <% end %>
 <br><br></h2>

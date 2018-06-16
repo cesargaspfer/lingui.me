@@ -95,3 +95,9 @@ pt:
   password_confirmation: "Confirme a senha"
   send_me: "Me mandar instruções da recuperação de senha"
   char_min: "caracteres no mínimo"
+
+
+  # Index
+  welcome: "Bem-Vindo ao Lingui.me!"
+  welcome_description: "Onde VOCÊ pode aprender qualquer lingua facilmente!"
+  welcome_do: "O que você deseja fazer?"

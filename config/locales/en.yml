@@ -127,3 +127,9 @@ en:
   password_confirmation: "Password Confirmation"
   send_me: "Send me reset password instructions"
   char_min: "characters minimum"
+
+
+  # Index
+  welcome: "Welcome to Lingui.me!"
+  welcome_description: "Where YOU can learn any language easily!"
+  welcome_do: "What do you want to do?"
