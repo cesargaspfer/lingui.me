@@ -5,4 +5,5 @@
     <%= link_to t("me"), user_path(id: current_user.id),class: "btn-navbar" %>
   <% end %>
   <%= link_to t("options"), options_path(), class: "btn-navbar" %>
+  <%= link_to t('logout'), destroy_user_session_path, method: :delete, class: "btn-navbar" %>
 </div>

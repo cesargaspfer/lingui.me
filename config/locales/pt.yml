@@ -5,7 +5,7 @@ pt:
   teach: "ensinar"
   me: "eu"
   options: "opções"
-
+  logout: "sair"
 
   # Learn, Teach and User
   Showing_questions_of: "Mostrando perguntas de "
