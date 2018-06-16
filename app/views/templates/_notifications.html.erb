@@ -1,16 +1,16 @@
 <div class="notif">
   <p align='center'>
-    <%= link_to "Ask your question", ask_path(), class: "CreatePostLink"%>
+    <%= link_to t("ask_your_question"), ask_path(), class: "CreatePostLink"%>
   </p>
   <hr class="PostBarLink">
-  <h2 align="center"><b>Your Notifications</b></h2>
+  <h2 align="center"><b><%= t 'your_notifications' %></b></h2>
   <hr class="notificationshr1">
 
   <%  AuthorCommentPost.where(post_id: Bookmark.where(:user_id => current_user.id).pluck(:post_id)).includes(:user, :post, :comment).order("created_at DESC").take(7).each do |acp|  %>
     <div class="notifications">
       <div class="notificationsDate"><%= acp.created_at.strftime("%m/%d/%Y") %></div>
       <div class="PostDescription"><%= link_to acp.user.username, user_path(id: acp.user.id), class: "PostDescriptionLink" %>
-      responded <%= link_to " a bookmarked question", post_path(id: acp.post_id), class: "notificationsLink" %>:<br>
+      <%= t 'responded' %> <%= link_to t("a_bookmarked_question"), post_path(id: acp.post_id), class: "notificationsLink" %>:<br>
       </div>
       <div class="notificationsBox">
       <%= acp.comment.text %>
@@ -18,7 +18,7 @@
     </div>
     <hr class="notificationshr1">
   <% end %>
-  <h2 align="center"><b><%= link_to "See more", notifications_path(), class: "notificationsLink" %></h2>
+  <h2 align="center"><b><%= link_to t("see_more"), notifications_path(), class: "notificationsLink" %></h2>
 
   </div>
 </div>

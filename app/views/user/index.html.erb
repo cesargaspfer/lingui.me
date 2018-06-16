@@ -7,43 +7,43 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if(!defined? @user.login) %>
-      <h2 class="title">Oops! This user doesn't exist!</h2>
+      <h2 class="title"><%= t('ops') %></h2>
     <% else %>
-      <h2 class="title">Showing questions of <%= @user.login %></h2>
+      <h2 class="title"><%= t('Showing_questions_of') %><%= @user.login %></h2>
       <hr class="PostBarLink">
       <p id="notice"><%= notice %></p>
       <% @contagem = 0 %>
       <% @posts.each do |post| %>
         <% @contagem += 1 %>
         <div class="PostBoxLink">
-          <div class="PostLanguage">Question of <b><%= post.learning_language %></b> -
+          <div class="PostLanguage"><%= t('Question_of') %><b><%= post.learning_language %></b> -
             <% if post.difficulty == 1 %>
-              beginner
+              <%= t("beginner") %>
             <% elsif post.difficulty == 2 %>
-              intermediate
+              <%= t("intermediate") %>
             <% else %>
-              advanced
+              <%= t("advanced") %>
             <% end %>
-            <br>Answer in <b><%= post.mother_language %></b></div>
+            <br><%= t('Answer_in') %><b><%= post.mother_language %></b></div>
           <a href="/posts/<%= post.id %>" class="PostLink">"<%= post.title %>"</a><br>
-          <div class="PostDescription">Posted by
+          <div class="PostDescription"><%= t('Asked_by') %>
             <%= link_to post.user.login, user_path(id: post.user.id), class: "PostDescriptionLink" %>
-             in <%= post.created_at.strftime("%m/%d/%Y") %>
+             <%= t('in') %> <%= post.created_at.strftime('%m/%d/%Y') %>
           </div>
           <div class="PostDetails"><% commCount = AuthorCommentPost.where(:post => post).count %>
             <%= commCount %>
             <% if commCount <= 1 %>
-              Comment,
+              <%= t('Comment') %>,
             <% else %>
-              Comments,
+              <%= t('Comments') %>,
             <% end %>
-            &nbsp;&nbsp;&nbsp;<%= post.upvotes %> Upvoted
+            &nbsp;&nbsp;&nbsp;<%= post.upvotes %> <%= t 'Upvoted' %>
           </div>
         </div>
         <hr class="PostBarLink">
       <% end %>
       <% if @contagem == 0 %>
-        <h2 class="title">Nothing found!<br><br>:(<br><br>Come again soon...</h2>
+        <h2 class="title"><%= t 'NothingFound' %></h2>
       <% end %>
     <% end %>
   </div>

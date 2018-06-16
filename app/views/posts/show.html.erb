@@ -6,24 +6,24 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <a href="#" class="title">"<%= @post.title %>"</a><br>
-    <div class="PostLanguage">Question of <b><%= @post.learning_language %></b> -
+    <div class="PostLanguage"><%= t('Question_of') %> <b><%= @post.learning_language %></b> -
       <% if @post.difficulty == 1 %>
-        beginner
+        <%= t("beginner") %>
       <% elsif @post.difficulty == 2 %>
-        intermediate
+        <%= t("intermediate") %>
       <% else %>
-        advanced
+        <%= t("advanced") %>
       <% end %>
-    <br>Answer in <b><%= @post.mother_language %></b>
+    <br><%= t('Answer_in') %> <b><%= @post.mother_language %></b>
     </div>
-    <div class="PostDescription">Posted by
+    <div class="PostDescription"><%= t('Asked_by') %>
       <%= link_to @post.user.login, user_path(id: @post.user.id), class: "PostDescriptionLink" %>
-       in <%= @post.created_at.strftime("%m/%d/%Y") %>
+       <%= t('in') %> <%= @post.created_at.strftime("%m/%d/%Y") %>
       <h3 align="left">
         <% if @bookmarked %>
-          <%= link_to "bookmarked!", bookmarks_path(post_id: @post.id), class: "PostDescriptionLink" %>
+          <%= link_to t('bookmarked'), bookmarks_path(post_id: @post.id), class: "PostDescriptionLink" %>
         <% else %>
-          <%= link_to "bookmark!", bookmarks_path(post_id: @post.id), class: "PostDescriptionLink" %>
+          <%= link_to t('bookmark'), bookmarks_path(post_id: @post.id), class: "PostDescriptionLink" %>
         <% end %>
       </h3>
     </div>
@@ -32,19 +32,19 @@
     </div>
     <% @acp.each do |acp| %>
       <div class="commentBox">
-        <%= link_to acp.user.username, user_path(id: acp.user.id), class: "PostDescriptionLink" %> at <%= acp.created_at.strftime("%m/%d/%Y") %><br>
+        <%= link_to acp.user.username, user_path(id: acp.user.id), class: "PostDescriptionLink" %> <%= t('at') %> <%= acp.created_at.strftime("%m/%d/%Y") %><br>
         <h3>
           <%= acp.comment.text %>
         </h3>
         <% if acp.comment.upvoted%>
-          <%= link_to "upvoted!", change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLinkTrue" %>
+          <%= link_to t('upvoted'), change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLinkTrue" %>
         <% else %>
-          <%= link_to "upvote!", change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLinkFalse" %>
+          <%= link_to t('upvote'), change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLinkFalse" %>
         <% end %>
         <% if acp.user.id == current_user.id %>
-          <%= link_to 'Delete', {:controller => "comments", action: :destroy,
+          <%= link_to t('Delete'), {:controller => "comments", action: :destroy,
             comment_id: acp.comment_id, post_id: acp.post_id }, method: :delete,
-            data: { confirm: 'Are you sure?' }, class: "PostDeleteLink" %>
+            data: { confirm:  t('Are_you_sure') }, class: "PostDeleteLink" %>
 
         <% end %>
       </div>
@@ -54,7 +54,7 @@
         <%= form.hidden_field :post_id, value: @post.id %>
         <%= form.hidden_field :user_id, value: current_user.id %>
         <%= form.text_area :text, id: "question"%>
-        <%= form.submit "Comment" %>
+        <%= form.submit t('Comment') %>
       </div>
     <% end %>
 

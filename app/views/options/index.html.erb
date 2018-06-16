@@ -6,12 +6,12 @@
     <div class='forms'>
       <% @count = 0 %>
       <%=form_with url: options_path do |f| %>
-        <%= f.label :learning_languages, class: "title" %><br />
+        <%= f.label t("learning_languages"), class: "title" %><br />
         <br>
         <% @count = 0 %>
         <% @available_languages.each do |x| %>
 
-          <label class="container-check-box"><%=x.idiom%>
+          <label class="container-check-box"><%=t x.idiom%>
             <%= f.check_box "learn#{@count}".to_sym, {checked: @learning_languages.include?(x), checked_value: true, unchecked_value: false}  %>
             <% @count = @count+1 %>
 
@@ -20,17 +20,17 @@
           </label>
         <% end %>
         <hr class="notificationshr1">
-        <%= f.label :teaching_languages, class: "title" %><br />
+        <%= f.label t("teaching_languages"), class: "title" %><br />
         <br>
         <% @count = 0 %>
         <% @available_languages.each do |x| %>
-          <label class="container-check-box"><%=x.idiom%>
+          <label class="container-check-box"><%= t x.idiom%>
             <%= f.check_box "teach#{@count}".to_sym, {checked: @mother_languages.include?(x), checked_value: true, unchecked_value: false}  %>
             <% @count = @count+1 %>
             <span class="checkmark"></span>
           </label>
         <% end %>
-        <%= f.submit "Update" %>
+        <%= f.submit t("Update") %>
       <% end %>
     </div>
 		<!-- <%= @user.methods %> -->

@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     else
       post.upvotes -= 1
     end
-    
+
     comment.upvoted = !comment.upvoted # flop the status
     comment.save
     post.save
@@ -53,7 +53,7 @@ class CommentsController < ApplicationController
 
     @author_comment = AuthorCommentPost.new(user: @user, post: @post, comment: @comment)
     @author_comment.save!
-    redirect_to @post, notice: 'Comment was successfully updated.'
+    redirect_to @post, notice: t('successfully_commented')
   end
 
   # PATCH/PUT /comments/1
@@ -61,7 +61,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment, notice: t('successfully_commented') }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -77,7 +77,7 @@ class CommentsController < ApplicationController
       AuthorCommentPost.find_by(user_id: current_user, post_id: params[:post_id], comment_id: params[:comment_id]).destroy
       Comment.find_by(id: params[:comment_id]).destroy
     end
-    redirect_to post_path(id: params[:post_id]), notice: 'Comment was successfully deleted.'
+    redirect_to post_path(id: params[:post_id]), notice: t('successfully_comment_del')
 
   end
 

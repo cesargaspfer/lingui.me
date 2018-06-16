@@ -1,0 +1,97 @@
+pt:
+
+  # Navbar
+  learn: "aprender"
+  teach: "ensinar"
+  me: "eu"
+  options: "opções"
+
+
+  # Learn, Teach and User
+  Showing_questions_of: "Mostrando perguntas de "
+  NothingFound: "Nada encontrado! Volte mais tarde..."
+
+
+  # User
+  ops: "Oops! Esse usuário não existe!"
+
+
+  # Options
+  learning_languages: "Línguas a aprender:"
+  teaching_languages: "Línguas a ensinar:"
+  Update: "Atualizar"
+
+
+  # Ask
+  ask: "Perguntar"
+  learning_language: "Língua a aprender"
+  answer_language: "Língua das respostas"
+  title: "Título"
+  question: "Pergunta"
+  text: "Texto"
+  difficulty: "Dificuldade"
+
+  # Post Box
+  beginner: "iniciante"
+  intermediate: "intermediário"
+  advanced: "avançado"
+
+  alemão: "alemão"
+  japonês: "japonês"
+  inglês: "inglês"
+  herbraico: "herbraico"
+  português: "português"
+  ídiche: "ídiche"
+
+  Answer_in: "Respostas em "
+  Question_of: "Pergunta de "
+  Asked_by: "Perguntado por"
+  in: "em"
+  Comment: "Comentário"
+  Comments: "Comentários"
+  Upvoted: "Certificado(s)"
+
+
+  # Post Page
+  bookmarked: "Marcar!"
+  bookmark: "Marcada!"
+  at: "em"
+  upvoted: "certificado!"
+  upvote: "certificar!"
+  Delete: "Deletar"
+  Are_you_sure: "Você tem certeza?"
+  successfully_created: "Pergunta criada com sucesso."
+  successfully_commented: "Comentário criado com sucesso."
+  successfully_comment_del: "Comentário deletado com sucesso."
+
+
+  # Ads
+  Ads: "Propaganda"
+  Some_ads : "Alguma propaganda:"
+  Ads_Image: "Imágem da propaganda"
+  Look: "Olhe essa propaganda!"
+
+
+  # Footer
+  making: "Tornando fácil o aprendizado e o ensinamento."
+  copy: "Copyright © 2018 lingui.me. Todos os direitos reservados"
+
+
+  # Notifications
+  ask_your_question: "Faça uma Pergunta"
+  your_notifications: "Suas Notificações"
+  see_more: "Ver mais"
+  responded: "respondeu"
+  a_bookmarked_question: " uma pergunta marcada"
+
+
+  # login, sign up, password
+  login: "Log in"
+  sign_up: "Registrar-se"
+  forgot: "Esqueceu a senha?"
+  password: "Senha"
+  remember_me: "Lembrar-me"
+  username: "Usuário"
+  password_confirmation: "Confirme a senha"
+  send_me: "Me mandar instruções da recuperação de senha"
+  char_min: "caracteres no mínimo"

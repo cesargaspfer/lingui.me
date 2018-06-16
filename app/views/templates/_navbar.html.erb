@@ -1,8 +1,8 @@
 <div class="navbar">
-  <%= link_to "learn", learn_path(), class: "btn-navbar" %>
-  <%= link_to "teach", teach_path(), class: "btn-navbar" %>
+  <%= link_to t("learn"), learn_path(dif: 1), class: "btn-navbar" %>
+  <%= link_to t("teach"), teach_path(), class: "btn-navbar" %>
   <% if user_signed_in? %>
-    <%= link_to "Me", user_path(id: current_user.id),class: "btn-navbar" %>
+    <%= link_to t("me"), user_path(id: current_user.id),class: "btn-navbar" %>
   <% end %>
-  <%= link_to "options", options_path(), class: "btn-navbar" %>
+  <%= link_to t("options"), options_path(), class: "btn-navbar" %>
 </div>

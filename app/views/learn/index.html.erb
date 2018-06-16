@@ -1,16 +1,37 @@
 <%= render ("/templates/navbar") %>
 
+<div class="navbar">
+  <% if @dif == 1 %>
+    <div class="btn-navbarClicked"><%= t('beginner')  %></div>
+  <% else %>
+    <%= link_to t('beginner'), learn_path(dif: 1), class: "btn-navbar" %>
+  <% end %>
+  <% if @dif == 2 %>
+    <div class="btn-navbarClicked"><%= t('intermediate')  %></div>
+  <% else %>
+    <%= link_to t('intermediate'), learn_path(dif: 2), class: "btn-navbar" %>
+  <% end %>
+  <% if @dif == 3 %>
+    <div class="btn-navbarClicked"><%= t('advanced')  %></div>
+  <% else %>
+    <%= link_to t('advanced'), learn_path(dif: 3), class: "btn-navbar" %>
+  <% end %>
+</div>
+
 <div class="row">
   <%= render ("/templates/ads") %>
 
   <div class="main">
+
+
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <h2 class="title">Showing questions of
+    <h2 class="title"><%= t('Showing_questions_of') %>
       <% @learning = LearningLanguage.where(:user => current_user.id) %>
       <% @countdown = @learning.count %>
       <% @learning.each do |x| %>
-        <%= x.language.idiom %>
+        <%= t x.language.idiom %>
         <% if @countdown != 1 %>
           ,
           <% @countdown -= 1 %>
@@ -20,38 +41,38 @@
     <hr class="PostBarLink">
     <% @i = 0 %>
     <% @posts.each do |post| %>
-      <% if AuthorCommentPost.where(:post => post).count > 0 %>
+      <% if AuthorCommentPost.where(:post => post).count > 0 and post.difficulty == @dif %>
       <% @i += 1 %>
         <div class="PostBoxLink">
-          <div class="PostLanguage">Question of <b><%= post.learning_language %></b> -
+          <div class="PostLanguage"><%= t('Question_of') %><b><%= t post.learning_language %></b> -
             <% if post.difficulty == 1 %>
-              beginner
+              <%= t("beginner") %>
             <% elsif post.difficulty == 2 %>
-              intermediate
+              <%= t("intermediate") %>
             <% else %>
-              advanced
+              <%= t("advanced") %>
             <% end %>
-          <br>Answer in <b><%= post.mother_language %></b></div>
+          <br><%= t('Answer_in') %><b><%= t(post.mother_language) %></b></div>
           <a href="/posts/<%= post.id %>" class="PostLink">"<%= post.title %>"</a><br>
-          <div class="PostDescription">Posted by
+          <div class="PostDescription"><%= t('Asked_by') %>
             <%= link_to post.user.login, user_path(id: post.user.id), class: "PostDescriptionLink" %>
-             in <%= post.created_at.strftime("%m/%d/%Y") %>
+             <%= t('in') %> <%= post.created_at.strftime("%m/%d/%Y") %>
           </div>
           <div class="PostDetails"><% commCount = AuthorCommentPost.where(:post => post).count %>
             <%= commCount %>
             <% if commCount <= 1 %>
-              Comment,
+              <%= t('Comment') %>,
             <% else %>
-              Comments,
+              <%= t('Comments') %>,
             <% end %>
-            &nbsp;&nbsp;&nbsp;<%= post.upvotes %> Upvoted
+            &nbsp;&nbsp;&nbsp;<%= post.upvotes %> <%= t 'Upvoted' %>
           </div>
         </div>
         <hr class="PostBarLink">
       <% end %>
     <% end %>
     <% if @i == 0 %>
-      <h2 class="title">Nothing found!<br><br>:(<br><br>Come again soon...</h2>
+      <h2 class="title"><%= t 'NothingFound' %></h2>
     <% end %>
   </div>
 

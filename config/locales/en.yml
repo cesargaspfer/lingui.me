@@ -30,4 +30,99 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  # Navbar
+  learn: "learn"
+  teach: "teach"
+  me: "me"
+  options: "options"
+
+
+  # Learn, Teach and User
+  Showing_questions_of: "Showing questions of "
+  NothingFound: "Nothing found! Come again soon..."
+
+
+  # User
+  ops: "Oops! This user doesn't exist!"
+
+
+  # Options
+  learning_languages: "Learning languages:"
+  teaching_languages: "Teaching languages:"
+  Update: "Update"
+
+
+  # Ask
+  ask: "Ask"
+  learning_language: "Learning language"
+  answer_language: "Answer language"
+  title: "Title"
+  question: "Question"
+  text: "Text"
+  difficulty: "Difficulty"
+
+  # Post Box
+  beginner: "beginner"
+  intermediate: "intermediate"
+  advanced: "advanced"
+
+  alemão: "german"
+  japonês: "japanese"
+  inglês: "english"
+  herbraico: "herbal"
+  português: "portuguese"
+  ídiche: "yiddish"
+
+  Answer_in: "Answers in "
+  Question_of: "Question of "
+  Asked_by: "Asked by"
+  in: "in"
+  Comment: "Comment"
+  Comments: "Comments"
+  Upvoted: "Upvoted"
+
+
+  # Post Page
+  bookmarked: "bookmarked!"
+  bookmark: "bookmark!"
+  at: "at"
+  upvoted: "upvoted!"
+  upvote: "upvote!"
+  Delete: "Delete"
+  Are_you_sure: "Are you sure?"
+  successfully_created: "Question was successfully created."
+  successfully_commented: "Comment was successfully created."
+  successfully_comment_del: "Comment was successfully deleted."
+
+
+  # Ads
+  Ads: "Ads"
+  Some_ads : "Some ads:"
+  Ads_Image: "Ads Image"
+  Look: "Look this ads!"
+
+
+  # Footer
+  making: "Making easier to learn and teach."
+  copy: "Copyright © 2018 lingui.me. All rights reserved"
+
+
+  # Notifications
+  ask_your_question: "Ask your question"
+  your_notifications: "Your notifications"
+  see_more: "See more"
+  responded: "responded"
+  a_bookmarked_question: " a bookmarked question"
+
+
+  # login, sign up, password
+  login: "Log in"
+  sign_up: "Sign up"
+  forgot: "Forgot your password?"
+  password: "Password"
+  remember_me: "Remember me"
+  username: "Username"
+  password_confirmation: "Password Confirmation"
+  send_me: "Send me reset password instructions"
+  char_min: "characters minimum"

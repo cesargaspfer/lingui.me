@@ -6,7 +6,7 @@
   <div class="main">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <h2 class="title">Your notifications:</h2>
+    <h2 class="title"><%= t 'your_notifications' %>:</h2>
     <hr class="PostBarLink">
     <% @i = 0 %>
     <% @acp.each do |acp| %>
@@ -15,14 +15,14 @@
           <div class="PostLanguage"><%= acp.created_at.strftime("%m/%d/%Y") %></div>
           <div class="PostDescription">
             <%= link_to acp.user.username, user_path(id: acp.user.id), class: "PostDescriptionLink" %>
-            responded <%= link_to " a bookmarked question", post_path(id: acp.post_id), class: "notificationsLink" %>:<br>
+            <%= t 'responded' %> <%= link_to t("a_bookmarked_question"), post_path(id: acp.post_id), class: "notificationsLink" %>:<br>
           </div>
           <%= acp.comment.text %>
         </div>
         <hr class="PostBarLink">
     <% end %>
     <% if @i == 0 %>
-      <h2 class="title">Nothing found!<br><br>:(<br><br>Come again soon...</h2>
+      <h2 class="title"><%= t 'NothingFound' %></h2>
     <% end %>
 
   </div>

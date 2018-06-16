@@ -17,7 +17,7 @@ class AskController < ApplicationController
       if @post.save
         bookmark = Bookmark.new(user_id: current_user.id, post_id: @post.id)
         bookmark.save!
-          format.html { redirect_to @post, notice: 'Post was successfully created.' }
+          format.html { redirect_to @post, notice: t('successfully_created') }
           format.json { render :show, status: :created, location: @post }
       else
         format.html { render :index }
