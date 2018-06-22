@@ -36,9 +36,8 @@ RSpec.describe AskController, type: :controller do
 
     it "should render ask index page when params are invalid" do
       user = create(:user)
-      ask = build_stubbed(:post)
       sign_in user
-      post :create, :params => {:ask => {:difficulty => ask.difficulty, :learning_language => ask.learning_language, :text => ask.text, :title => ask.title}}
+      post :create, :params => {:ask => {:difficulty => 1}}
 
       expect(response).to render_template(:index)
     end
