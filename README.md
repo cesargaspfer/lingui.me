@@ -32,6 +32,7 @@ A partir desses elementos, o model do projeto é construído.
 - Todos os models estão funcionando como devem.
 - O usuário pode deletar seus comentários/ respostas em um Post
 - A funcionalidade do opções (comunicação com o banco de dados)
+- Classificação dos posts em dificuldades
 - Traduções
 
 4) Testes:
