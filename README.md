@@ -30,16 +30,13 @@ A partir desses elementos, o model do projeto é construído.
 - Notificações
 - Criação de Post (página onde o usuário pode criar um post)
 - Todos os models estão funcionando como devem.
-- Os scaffolds de todos os models, mas apenas para o development e para testes.
 - O usuário pode deletar seus comentários/ respostas em um Post
-
-3) O que iremos implementar:
 - A funcionalidade do opções (comunicação com o banco de dados)
-- Botões de "novas perguntas" e "perguntas anteriores" nas páginas, para melhor organização
-- Possivelmente adicionaremos traduções, mas isso não é a prioridade no momento, estamos focando mesmo no site em sí
+- Traduções
 
 4) Testes:
-- Como especificado nessa fase, implementamos os testes de unidade para todos os modelos, verificando o comportamento do banco ao inserirmos dados válidos ou nulos.
+- Implementamos os testes de unidade para todos os modelos, verificando o comportamento do banco ao inserirmos dados válidos ou nulos.
+- Implementamos testes para os controladores, em sua maioria verificando os redirecionamentos
 - Para rodar os testes, siga os passos da instalação local (5) e execute os comandos `rails db:test:prepare; rake`
 
 5) Instalação Local:
