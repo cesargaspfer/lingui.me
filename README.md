@@ -18,7 +18,7 @@ Dessa maneira, a comunidade no site constrói um crescimento mútuo linguístico
 A partir desses elementos, o model do projeto é construído.
 
 2) Funcionalidade implementadas:
-- Login/Sign In
+- Login/Sign In e Logout
 - Página Inicial (que direciona para o feed de ensino ou de aprendizado).
 - Feed de Ensino (feed onde aparece posts que o usuário logado pode corrigir).
 - Feed de Aprendizado (feed onde aparece posts que o usuário logado pode utilizar para aprender).
