@@ -1,5 +1,12 @@
 pt:
-
+  devise:
+    sessions:
+      user:
+        signed_in: "usuário logado"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "objeto inválido"
   # Navbar
   learn: "aprender"
   teach: "ensinar"
