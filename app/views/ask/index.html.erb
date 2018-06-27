@@ -1,8 +1,10 @@
 
+
 <%= render ("/templates/navbar") %>
 <div class="row">
   <%= render ("/templates/ads") %>
   <div class="main">
+    <p id="notice"><%= notice %></p>
 
     <%= form_with scope: :ask, url: ask_path, local: true do |f| %>
     <%= f.label t('learning_language'), class: "title" %><br />

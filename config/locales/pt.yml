@@ -1,12 +1,41 @@
 pt:
+  errors:
+    messages:
+      not_saved: "Erro, verifique:"
   devise:
+    registrations:
+      user:
+        signed_up: "Usuário criado com sucesso!"
     sessions:
       user:
         signed_in: "usuário logado"
+        signed_out: "usuário deslogado"
+    failure:
+      user:
+        not_found_in_database: "não encontrado"
+        invalid: "usuário inválido"
   activerecord:
     errors:
       messages:
-        record_invalid: "objeto inválido"
+        record_invalid: "registro inválido"
+      models:
+        user:
+          attributes:
+            email:
+              blank: ": o email está em branco!"
+              taken: ": email já existente!"
+            password:
+              blank: ": a senha está em branco!"
+              too_short: ": a senha está pequena!"
+            username:
+              blank: ": o usuário está em branco!"
+              taken: ": Usuário já existente!"
+            password_confirmation:
+              confirmation: "Senha incompatível!"
+      messages:
+        record_invalid: "registro inválido"
+
+
   # Navbar
   learn: "aprender"
   teach: "ensinar"
@@ -27,6 +56,7 @@ pt:
   learning_languages: "Línguas a aprender:"
   teaching_languages: "Línguas a ensinar:"
   Update: "Atualizar"
+  missing_lang: "Selecione algumas línguas antes aprender ou ensinar."
 
 
   # Ask
@@ -37,6 +67,8 @@ pt:
   question: "Pergunta"
   text: "Texto"
   difficulty: "Dificuldade"
+  missing_tit: "Faltou o título!"
+  missing_txt: "Faltou o texto!"
 
   # Post Box
   beginner: "iniciante"
@@ -70,7 +102,8 @@ pt:
   successfully_created: "Pergunta criada com sucesso."
   successfully_commented: "Comentário criado com sucesso."
   successfully_comment_del: "Comentário deletado com sucesso."
-
+  Comment_btn: "Comentar"
+  comment_mis: "Comentário inválido, ele está em branco!"
 
   # Ads
   Ads: "Propaganda"

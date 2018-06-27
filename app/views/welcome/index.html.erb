@@ -1,7 +1,7 @@
 <% if !user_signed_in? %>
   <div class="navbar">
-    <a href="users/sign_in" class="btn-navbar">Log in</a>
-    <a href="users/sign_up" class="btn-navbar">Sign up</a>
+    <%= link_to t('login'), new_user_session_path, class: "btn-navbar" %>
+    <%= link_to t('sign_up'), new_user_registration_path, class: "btn-navbar" %>
   </div>
 <% else %>
   <%= render ("/templates/navbar") %>
@@ -16,8 +16,8 @@
 <h3 class="forms-h2" align="center">
   <%= t('welcome_do') %><br><br>
   <% if !user_signed_in? %>
-    <%= link_to t("login"), teach_path()%> &nbsp&nbsp&nbsp&nbsp&nbsp
-    <%= link_to t("sign_up"), teach_path()%>
+    <%= link_to t("login"), new_user_session_path%> &nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= link_to t("sign_up"), new_user_registration_path%>
   <% else %>
     <%= link_to t("learn"), learn_path(dif: 1) %> &nbsp&nbsp&nbsp&nbsp&nbsp
     <%= link_to t("teach"), teach_path()%>

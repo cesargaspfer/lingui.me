@@ -3,7 +3,7 @@
 <div class="row">
   <%= render ("/templates/ads") %>
   <div class="main">
-    <p class="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <a href="#" class="title">"<%= @post.title %>"</a><br>
     <div class="PostLanguage"><%= t('Question_of') %> <b><%= @post.learning_language %></b> -
@@ -54,7 +54,7 @@
         <%= form.hidden_field :post_id, value: @post.id %>
         <%= form.hidden_field :user_id, value: current_user.id %>
         <%= form.text_area :text, id: "question"%>
-        <%= form.submit t('Comment') %>
+        <%= form.submit t('Comment_btn') %>
       </div>
     <% end %>
 

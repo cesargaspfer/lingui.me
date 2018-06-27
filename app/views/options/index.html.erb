@@ -3,6 +3,7 @@
 <div class="row">
   <%= render ("/templates/ads") %>
   <div class="main">
+    <p id="notice"><%= notice %></p>
     <div class='forms'>
       <% @count = 0 %>
       <%=form_with url: options_path do |f| %>
@@ -34,7 +35,6 @@
       <% end %>
     </div>
 		<!-- <%= @user.methods %> -->
-    <p id="notice"><%= notice %></p>
     <hr class="PostBarLink">
   </div>
 

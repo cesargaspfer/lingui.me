@@ -31,6 +31,43 @@
 
 en:
 
+  errors:
+    messages:
+      not_saved: "Error, check:"
+  devise:
+    registrations:
+      user:
+        signed_up: "User created!"
+    sessions:
+      user:
+        signed_in: "User signed in!"
+        signed_out: "User signed out"
+    failure:
+      user:
+        not_found_in_database: "not found in database"
+        invalid: "invalid username"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "invalid record"
+      models:
+        user:
+          attributes:
+            email:
+              blank: ": is blank!"
+              taken: ": email already taken!"
+            password:
+              blank: ": is blank!"
+              too_short: ": is too short!"
+            username:
+              blank: ": is blank!"
+              taken: ": already taken!"
+            password_confirmation:
+              confirmation: "Password not match!"
+      messages:
+        record_invalid: "invalid record"
+
+
   # Navbar
   learn: "learn"
   teach: "teach"
@@ -52,6 +89,7 @@ en:
   learning_languages: "Learning languages:"
   teaching_languages: "Teaching languages:"
   Update: "Update"
+  missing_lang: "Select some languages before learn or teach."
 
 
   # Ask
@@ -62,6 +100,9 @@ en:
   question: "Question"
   text: "Text"
   difficulty: "Difficulty"
+  missing_tit: "Missing title!"
+  missing_txt: "Missing text!"
+
 
   # Post Box
   beginner: "beginner"
@@ -95,6 +136,8 @@ en:
   successfully_created: "Question was successfully created."
   successfully_commented: "Comment was successfully created."
   successfully_comment_del: "Comment was successfully deleted."
+  Comment_btn: "Comment"
+  comment_mis: "Comentário missing!"
 
 
   # Ads

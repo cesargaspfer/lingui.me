@@ -44,16 +44,19 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     params[:status]
+    if params[:text].blank?
+      redirect_to post_path(params[:post_id]), notice: t('comment_mis')
+    else
+      @comment = Comment.new(text: params[:text], upvoted: false)
+      @comment.save!
 
-    @comment = Comment.new(text: params[:text], upvoted: false)
-    @comment.save!
+      @user = User.find_by(:id => params[:user_id])
+      @post = Post.find_by(:id => params[:post_id])
 
-    @user = User.find_by(:id => params[:user_id])
-    @post = Post.find_by(:id => params[:post_id])
-
-    @author_comment = AuthorCommentPost.new(user: @user, post: @post, comment: @comment)
-    @author_comment.save!
-    redirect_to @post, notice: t('successfully_commented')
+      @author_comment = AuthorCommentPost.new(user: @user, post: @post, comment: @comment)
+      @author_comment.save!
+      redirect_to @post, notice: t('successfully_commented')
+    end
   end
 
   # PATCH/PUT /comments/1
