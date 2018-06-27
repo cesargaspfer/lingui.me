@@ -19,9 +19,43 @@ class LearnController < ApplicationController
       @dif = 0
     end
 
-    @posts = Post.where(:learning_language => @learningLanguage,
+    allposts = Post.where(:learning_language => @learningLanguage,
                         :mother_language   => @motherLanguage
                         ).includes(:user).order("created_at DESC")
+
+    vars = request.query_parameters
+    @pg = vars['pg']
+    if(@pg.blank?)
+      @pg = 0
+    end
+    @pg = @pg.to_i
+    if @pg < 0
+      @pg = 0
+    end
+    @posts = []
+    @primeira_pagina = true
+    @ultima_pagina = true
+    total = allposts.count
+    i = @pg * 5
+    j = 0
+    contagem = 0
+    while j < total
+      if AuthorCommentPost.where(:post => allposts[j]).count > 0 and allposts[j].difficulty == @dif
+        if contagem >= i
+          if contagem < i + 5
+            @posts.push(allposts[j])
+          else
+            @ultima_pagina = false
+            break
+          end
+        end
+        contagem += 1
+      end
+      j += 1
+    end
+    if contagem != 0 and @pg != 0
+      @primeira_pagina = false
+    end
   end
 
 

@@ -17,6 +17,14 @@
         <% end %>
       <% end %>
     </h2>
+    <p>
+      <% if @primeira_pagina == false %>
+        <span style="float:left;"><%= link_to t('newer'), teach_path(pg: @pg-1), class: "notificationsLink" %></span>
+      <% end %>
+      <% if @ultima_pagina == false %>
+        <span style="float:right;"><%= link_to t('older'), teach_path(pg: @pg+1), class: "notificationsLink" %></span>
+      <% end %>
+    </p><br>
     <hr class="PostBarLink">
     <% @contagem = 0 %>
     <% @posts.each do |post| %>
@@ -34,7 +42,7 @@
         <a href="/posts/<%= post.id %>" class="PostLink">"<%= post.title %>"</a><br>
         <div class="PostDescription"><%= t('Asked_by') %>
           <%= link_to post.user.login, user_path(id: post.user.id), class: "PostDescriptionLink" %>
-           <%= t('in') %> <%= post.created_at.strftime("%m/%d/%Y") %>
+           <%= t('in') %> <%= post.created_at.strftime(t('date')) %>
         </div>
         <div class="PostDetails"><% commCount = AuthorCommentPost.where(:post => post).count %>
           <%= commCount %>
@@ -50,6 +58,15 @@
     <% end %>
     <% if @contagem == 0 %>
       <h2 class="title"><%= t 'NothingFound' %></h2>
+    <% else %>
+      <p>
+        <% if @primeira_pagina == false %>
+          <span style="float:left;"><%= link_to t('newer'), teach_path(pg: @pg-1), class: "notificationsLink" %></span>
+        <% end %>
+        <% if @ultima_pagina == false %>
+          <span style="float:right;"><%= link_to t('older'), teach_path(pg: @pg+1), class: "notificationsLink" %></span>
+        <% end %>
+      </p>
     <% end %>
   </div>
 

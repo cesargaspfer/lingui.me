@@ -10,11 +10,11 @@ class BookmarksController < ApplicationController
     if bookSearch.count == 0
       bookmark = Bookmark.new(user_id: current_user.id, post_id: params[:post_id])
       bookmark.save!
-      redirect_to post_path(id: params[:post_id]), notice: 'Bookmarked!'
+      redirect_to post_path(id: params[:post_id], pg: params[:pg]), notice: t('bookmarked')
     else
       bookmark = Bookmark.find_by(user_id: current_user.id, post_id: params[:post_id])
       bookmark.destroy
-      redirect_to post_path(id: params[:post_id]), notice: 'Bookmark undone!'
+      redirect_to post_path(id: params[:post_id], pg: params[:pg]), notice: t('Bookmark_undone')
     end
   end
 
@@ -81,6 +81,6 @@ class BookmarksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bookmark_params
-      params.require(:bookmark).permit(:user_id, :post_id)
+      params.require(:bookmark).permit(:user_id, :post_id, :pg)
     end
 end

@@ -1,4 +1,3 @@
-
 <%= render ("/templates/navbar") %>
 <div class="row">
   <%= render ("/templates/ads") %>
@@ -18,37 +17,62 @@
     </div>
     <div class="PostDescription"><%= t('Asked_by') %>
       <%= link_to @post.user.login, user_path(id: @post.user.id), class: "PostDescriptionLink" %>
-       <%= t('in') %> <%= @post.created_at.strftime("%m/%d/%Y") %>
+       <%= t('in') %>
+       <%= if params[:locale] == nil
+          @post.created_at.strftime(t('date'))
+        end %>
       <h3 align="left">
         <% if @bookmarked %>
-          <%= link_to t('bookmarked'), bookmarks_path(post_id: @post.id), class: "PostDescriptionLink" %>
+          <%= link_to t('bookmarked'), bookmarks_path(post_id: @post.id, pg: @pg), class: "PostDescriptionLink" %>
         <% else %>
-          <%= link_to t('bookmark'), bookmarks_path(post_id: @post.id), class: "PostDescriptionLink" %>
+          <%= link_to t('bookmark'), bookmarks_path(post_id: @post.id, pg: @pg), class: "PostDescriptionLink" %>
         <% end %>
       </h3>
     </div>
     <div class="questionsBox">
       <%= @post.text %>
     </div>
+    <p>
+      <% if @primeira_pagina == false %>
+        <span style="float:left;"><%= link_to t('newer_comment'), post_path(post_id: @post.id, pg: @pg-1), class: "notificationsLink" %></span>
+      <% end %>
+      <% if @ultima_pagina == false %>
+        <span style="float:right;"><%= link_to t('older_comment'), post_path(post_id: @post.id, pg: @pg+1), class: "notificationsLink" %></span>
+      <% end %>
+    </p><br>
+    <hr class="PostBarLink">
     <% @acp.each do |acp| %>
       <div class="commentBox">
-        <%= link_to acp.user.username, user_path(id: acp.user.id), class: "PostDescriptionLink" %> <%= t('at') %> <%= acp.created_at.strftime("%m/%d/%Y") %><br>
+        <%= link_to acp.user.username, user_path(id: acp.user.id), class: "PostDescriptionLink" %> <%= t('at') %> <%= acp.created_at.strftime(t('date')) %><br>
         <h3>
           <%= acp.comment.text %>
         </h3>
-        <% if acp.comment.upvoted%>
-          <%= link_to t('upvoted'), change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLinkTrue" %>
-        <% else %>
-          <%= link_to t('upvote'), change_upvote_comment_path(id: acp.comment.id), class: "UpvoteLinkFalse" %>
+        <% if acp.user_id != current_user.id %>
+          <% if acp.comment.upvoted%>
+            <%= link_to t('upvoted'), change_upvote_comment_path(id: acp.comment.id, pg: @pg), class: "UpvoteLinkTrue" %>
+          <% else %>
+            <%= link_to t('upvote'), change_upvote_comment_path(id: acp.comment.id, pg: @pg), class: "UpvoteLinkFalse" %>
+          <% end %>
         <% end %>
         <% if acp.user.id == current_user.id %>
           <%= link_to t('Delete'), {:controller => "comments", action: :destroy,
-            comment_id: acp.comment_id, post_id: acp.post_id }, method: :delete,
+            comment_id: acp.comment_id, post_id: acp.post_id, pg: @pg }, method: :delete,
             data: { confirm:  t('Are_you_sure') }, class: "PostDeleteLink" %>
 
         <% end %>
       </div>
     <%end%>
+    <br>
+    <p>
+      <% if @primeira_pagina == false %>
+        <span style="float:left;"><%= link_to t('newer_comment'), post_path(post_id: @post.id, pg: @pg-1), class: "notificationsLink" %></span>
+      <% end %>
+      <% if @ultima_pagina == false %>
+        <span style="float:right;"><%= link_to t('older_comment'), post_path(post_id: @post.id, pg: @pg+1), class: "notificationsLink" %></span>
+      <% end %>
+
+    </p><br><hr class="PostBarLink">
+
     <%= form_with url: comments_path do |form|%>
       <div class="commentBox">
         <%= form.hidden_field :post_id, value: @post.id %>

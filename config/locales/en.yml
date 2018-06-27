@@ -30,7 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-
+  date: "%m/%d/%Y"
+  newer: "< newer questions"
+  older: "older questions >"
   errors:
     messages:
       not_saved: "Error, check:"
@@ -128,6 +130,7 @@ en:
   # Post Page
   bookmarked: "bookmarked!"
   bookmark: "bookmark!"
+  Bookmark_undone: "Bookmark undone"
   at: "at"
   upvoted: "upvoted!"
   upvote: "upvote!"
@@ -138,7 +141,8 @@ en:
   successfully_comment_del: "Comment was successfully deleted."
   Comment_btn: "Comment"
   comment_mis: "Comentário missing!"
-
+  newer_comment: "< newer comments"
+  older_comment: "older comments >"
 
   # Ads
   Ads: "Ads"

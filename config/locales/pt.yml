@@ -1,4 +1,7 @@
 pt:
+  date: "%d/%m/%Y"
+  newer: "< perguntas mais recentes"
+  older: "perguntas mais antigas >"
   errors:
     messages:
       not_saved: "Erro, verifique:"
@@ -92,8 +95,9 @@ pt:
 
 
   # Post Page
-  bookmarked: "Marcar!"
-  bookmark: "Marcada!"
+  bookmarked: "Marcada!"
+  bookmark: "Marcar!"
+  Bookmark_undone: "Desmarcada"
   at: "em"
   upvoted: "certificado!"
   upvote: "certificar!"
@@ -104,11 +108,12 @@ pt:
   successfully_comment_del: "Comentário deletado com sucesso."
   Comment_btn: "Comentar"
   comment_mis: "Comentário inválido, ele está em branco!"
-
+  newer_comment: "< comentários mais recentes"
+  older_comment: "comentários mais antigos >"
   # Ads
   Ads: "Propaganda"
   Some_ads : "Alguma propaganda:"
-  Ads_Image: "Imágem da propaganda"
+  Ads_Image: "Imagem da propaganda"
   Look: "Olhe essa propaganda!"
 
 

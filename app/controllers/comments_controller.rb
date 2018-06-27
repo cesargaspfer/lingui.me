@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     comment.upvoted = !comment.upvoted # flop the status
     comment.save
     post.save
-    redirect_to post_path(post)
+    redirect_to post_path(id: post, pg: params[:pg])
   end
 
   # GET /comments/1
@@ -55,7 +55,7 @@ class CommentsController < ApplicationController
 
       @author_comment = AuthorCommentPost.new(user: @user, post: @post, comment: @comment)
       @author_comment.save!
-      redirect_to @post, notice: t('successfully_commented')
+      redirect_to post_path(id: @post, pg: -1), notice: t('successfully_commented')
     end
   end
 
@@ -80,7 +80,7 @@ class CommentsController < ApplicationController
       AuthorCommentPost.find_by(user_id: current_user, post_id: params[:post_id], comment_id: params[:comment_id]).destroy
       Comment.find_by(id: params[:comment_id]).destroy
     end
-    redirect_to post_path(id: params[:post_id]), notice: t('successfully_comment_del')
+    redirect_to post_path(id: params[:post_id], pg: params[:pg]), notice: t('successfully_comment_del')
 
   end
 
@@ -92,6 +92,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:upvotes, :text)
+      params.require(:comment).permit(:upvotes, :text, :pg)
     end
 end
