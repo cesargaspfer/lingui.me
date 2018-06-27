@@ -144,6 +144,7 @@ en:
   newer_comment: "< newer comments"
   older_comment: "older comments >"
 
+
   # Ads
   Ads: "Ads"
   Some_ads : "Some ads:"
@@ -162,6 +163,8 @@ en:
   see_more: "See more"
   responded: "responded"
   a_bookmarked_question: " a bookmarked question"
+  newer_not: "< newer notifications"
+  older_not: "older notifications >"
 
 
   # login, sign up, password

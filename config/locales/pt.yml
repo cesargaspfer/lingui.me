@@ -110,6 +110,8 @@ pt:
   comment_mis: "Comentário inválido, ele está em branco!"
   newer_comment: "< comentários mais recentes"
   older_comment: "comentários mais antigos >"
+
+
   # Ads
   Ads: "Propaganda"
   Some_ads : "Alguma propaganda:"
@@ -128,7 +130,8 @@ pt:
   see_more: "Ver mais"
   responded: "respondeu"
   a_bookmarked_question: " uma pergunta marcada"
-
+  newer_not: "< notificações mais recentes"
+  older_not: "notificações mais antigas >"
 
   # login, sign up, password
   login: "Log in"

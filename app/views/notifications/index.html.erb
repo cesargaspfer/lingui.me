@@ -7,6 +7,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <h2 class="title"><%= t 'your_notifications' %>:</h2>
+    <p>
+      <% if @primeira_pagina == false %>
+        <span style="float:left;"><%= link_to t('newer_not'), notifications_path(pg: @pg-1), class: "notificationsLink" %></span>
+      <% end %>
+      <% if @ultima_pagina == false %>
+        <span style="float:right;"><%= link_to t('older_not'), notifications_path(pg: @pg+1), class: "notificationsLink" %></span>
+      <% end %>
+    </p><br>
     <hr class="PostBarLink">
     <% @i = 0 %>
     <% @acp.each do |acp| %>
@@ -24,7 +32,14 @@
     <% if @i == 0 %>
       <h2 class="title"><%= t 'NothingFound' %></h2>
     <% end %>
-
+    <p>
+      <% if @primeira_pagina == false %>
+        <span style="float:left;"><%= link_to t('newer_not'), notifications_path(pg: @pg-1), class: "notificationsLink" %></span>
+      <% end %>
+      <% if @ultima_pagina == false %>
+        <span style="float:right;"><%= link_to t('older_not'), notifications_path(pg: @pg+1), class: "notificationsLink" %></span>
+      <% end %>
+    </p>
   </div>
   <div class="ads"></div>
 </div>
