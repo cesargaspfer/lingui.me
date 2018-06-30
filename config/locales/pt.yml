@@ -149,3 +149,57 @@ pt:
   welcome: "Bem-Vindo ao Lingui.me!"
   welcome_description: "Onde VOCÊ pode aprender qualquer lingua facilmente!"
   welcome_do: "O que você deseja fazer?"
+  platform_description: '<h2>DESTRINCHANDO A PLATAFORMA</h2>'
+  fundamentals_title: |
+    <h2 align="center">1. FUNDAMENTOS</h2>
+  fundamentals_text: |
+    <h4 align="left">
+    Cada usuário é munido de ao menos uma língua mãe (ou seja, de ensino) e de uma língua de aprendizado.
+    </h4>
+
+    <h4 align="left">
+    A plataforma funciona através de textos/perguntas que são a base das interações entre os usuários.
+    </h4>
+
+    <h4 align="left">
+    Existem três feeds: "aprender", onde o usuário visualiza textos/perguntas na língua de aprendizado; "ensinar", onde o usuário visualiza textos/perguntas na língua mãe; e "eu", onde o usuário visualiza os próprios textos/perguntas.
+    </h4>
+
+    <h4 align="left">
+    Cada texto/pergunta possui um nível de dificuldade, a língua em que foi feita e a língua para ser respondida. (*).
+    </h4>
+
+    <h4 align="left">
+    * Isso é feito com o objetivo de escalonar o texto/pergunta para o máximo de usuários possíveis, facilitando tanto o surgimento dela na aba "aprender" para usuários que possam se beneficiar dela, quanto na aba "ensinar" para que atinja mais precisamenta a quem possa responder.
+    </h4>
+
+  how_to_title: <h2 align="center">2. FUNCIONAMENTO</h2>
+  how_to_text: |
+    <h4 align="left">
+    Uma vez logado, o primeiro passo é ir na aba "opções" e definir as línguas de aprendizado e as línguas mãe.
+    Depois disso, você já pode começar a interagir com o site:</h4>
+    <h4 align="left">
+    I) Fazendo um texto/pergunta no botão/link "Faça uma pergunta" posicionado no lado direito da tela.
+    </h4>
+
+    <h4 align="left">
+    II) Interagindo com a aba "aprender". Nesse feed, você pode visualizar textos/perguntas respondidos e certificados nos três níveis disponíveis: iniciante, intermediário e avançado. Em cada uma delas, você visualizará os textos/perguntas de outros usuários - no nível correspondente - para que você possa adquirir um novo aprendizado com base em suas correções.
+    </h4>
+
+    <h4 align="left">
+    II) Interagindo com a aba "ensinar". Nesse feed, você pode visualizar textos/perguntas não respondidos (ou respondidos, mas não certificados) que você pode oferecer a sua resposta através de um comentário e ajudar no aprendizado de um outro usuário.
+    </h4>
+
+    <h4 align="left">
+    IV) Interagindo com a aba "eu". Nesse feed, você visualizar os seus próprios textos/perguntas.
+    </h4>
+  additionals_title: |
+    <h2 align="center">3. FUNCIONALIDADES ADICIONAIS</h2>
+  additionals_text: |
+    <h4 align="left">
+    Você também pode MARCAR perguntas - usualmente não respondidas - para que quando sofrerem alguma alteração, você poder receber uma notificação em "Suas Notificações" no lado direito da tela.
+    </h4>
+
+    <h4 align="left">
+    Perguntas com respostas podem receber CERTIFICAÇÕES dos usuários para que possam ser classificadas como válidas para aparecer no feed de aprendizagem (aba "aprender") e contribuir no aprendizado de outros usuários.'
+    </h4>

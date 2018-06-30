@@ -20,6 +20,23 @@
     <%= link_to t("sign_up"), new_user_registration_path%>
   <% else %>
     <%= link_to t("learn"), learn_path(dif: 1) %> &nbsp&nbsp&nbsp&nbsp&nbsp
-    <%= link_to t("teach"), teach_path()%>
+    <%= link_to t("teach"), teach_path()%><br><br>
+    <br><br>
+    <div class="welcome_1">
+      <%= raw t 'platform_description' %>
+    	<br>
+      <%= raw t 'fundamentals_title' %>
+    	<%= raw t 'fundamentals_text' %>
+    </div>
+    <div class="welcome_2">
+    	<br>
+    	<%= raw t 'how_to_title' %>
+    	<%= raw t 'how_to_text' %>
+    </div>
+    <div class="welcome_1">
+      <br>
+      <%= raw t 'additionals_title' %>
+      <%= raw t 'additionals_text' %>
+    </div>
   <% end %>
-<br><br></h2>
+</h2>
