@@ -183,3 +183,48 @@ en:
   welcome: "Welcome to Lingui.me!"
   welcome_description: "Where YOU can learn any language easily!"
   welcome_do: "What do you want to do?"
+  platform_description: '<h2>EXPOSING THE PLATFORM IN DETAILS</h2>'
+  fundamentals_title: |
+    <h2 align="center">1. FUNDAMENTALS</h2>
+  fundamentals_text: |
+    <h4 align="left">
+    Every user knows at least one mother language (a teaching one) and one learning language.
+    </h4>
+    <h4 align="left">
+    The platform works through questions which are the base of interactions among the users.
+    </h4>
+    <h4 align="left">
+    There are three feeds: "learning", where the user visualizes questions in learning language; "teaching", where the user visualizes questions in mother language; and "me", where the user visualizes the own questions.
+    </h4>
+    <h4 align="left">
+    Every question has a difficulty level, the question's language and the answer's language. (*).
+    </h4>
+    <h4 align="left">
+    * This is done to make easier its appearance in "learning" feed where the user will benefit from it and in "teaching" feed where specific users knowing the question's language can solve the question.
+    </h4>
+  how_to_title: <h2 align="center">2. ACTION</h2>
+  how_to_text: |
+    <h4 align="left">
+    Once logged in, the first step is going to "options" tab and setting the learning's languages and mother's languages.
+    Afterwards, you begin interacting with the site:</h4>
+    <h4 align="left">
+    I) Doing a question on "Do a question" link located on the right side of the page.
+    </h4>
+    <h4 align="left">
+    II) Interacting with the "learning" tab. In this feed, you visualize answered questions in the three available levels divided in three sub-tabs: beginner, intermediary and advanced. In each one of them, you'll visualize questions from other users - on the selected level - so you can learn from its corrections.
+    </h4>
+    <h4 align="left">
+    III) Interacting with the "teaching" tab. In this feed, you visualize answered and not answered questions where you can give your answer through a comment and contributing on someone else's learning.
+    </h4>
+    <h4 align="left">
+    IV) Interacting with the "me" tab. In this feed, you visualize your own questions.
+    </h4>
+  additionals_title: |
+    <h2 align="center">3. ADDITIONAL FEATURES</h2>
+  additionals_text: |
+    <h4 align="left">
+    You can also BOOKMARK questions - usually not answered - so you can receive notifications of updates on it in "Your Notifications" on the right side of the page.
+    </h4>
+    <h4 align="left">
+    Answered questions can receive CERTIFICATIONS from users in order to be validated by the community and the question's user to feel safe the given answer.
+    </h4>
